@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Natuessence Italy — Distributore Cosmetici Naturali</title>
-<meta name="description" content="Natuessence Italy S.R.L. — Distributore e rivenditore europeo di cosmetici naturali, biologici e integratori da piccoli produttori indipendenti del Brasile e d'Europa.">
+<title>Natuessence Italy — Importatore e Distributore UE di Cosmetici Naturali e Integratori</title>
+<meta name="description" content="Natuessence Italy S.R.L. — Importatore e distributore europeo di cosmetici naturali, biologici, integratori e HBA da micro-marchi indipendenti dall'America Latina e dagli Stati Uniti.">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -107,6 +107,7 @@
   .brand-text-logo.uppercase { font-family: 'Outfit', sans-serif; text-transform: uppercase; font-size: 0.68rem; letter-spacing: 0.15em; font-weight: 600; }
   .brand-text-logo.minimal { font-family: 'Outfit', sans-serif; font-weight: 300; font-size: 0.95rem; letter-spacing: 0.06em; }
   .brand-text-logo.italic { font-style: italic; }
+  .brand-category-icon { font-size: 2rem; line-height: 1; margin-bottom: 0.2rem; }
 
   /* ABOUT */
   .about { padding: 8rem 6%; max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
@@ -218,6 +219,21 @@
 
   /* CTA */
   .cta { padding: 8rem 6%; text-align: center; background: var(--warm-white); }
+
+  /* NEW BRANDS WANTED */
+  .brands-wanted { padding: 6rem 6%; background: var(--cream); }
+  .brands-wanted-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
+  .brands-wanted-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3rem; margin-bottom: 3rem; }
+  .wanted-card { background: var(--warm-white); border-radius: 20px; padding: 2.5rem 2rem; text-align: center; transition: all 0.4s ease; border: 1px solid transparent; position: relative; overflow: hidden; }
+  .wanted-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(139,158,124,0.06) 100%); opacity: 0; transition: opacity 0.4s; }
+  .wanted-card:hover::before { opacity: 1; }
+  .wanted-card:hover { border-color: var(--sage-light); transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.06); }
+  .wanted-icon { font-size: 2.8rem; margin-bottom: 1.2rem; display: block; }
+  .wanted-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 500; margin-bottom: 0.5rem; }
+  .wanted-card p { font-size: 0.78rem; color: #999; line-height: 1.6; }
+  .brands-wanted-cta { margin-top: 1rem; }
+  @media (max-width: 1024px) { .brands-wanted-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 768px) { .brands-wanted-grid { grid-template-columns: 1fr; max-width: 400px; margin: 2rem auto; } }
   .cta-inner { max-width: 800px; margin: 0 auto; background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%); border-radius: 32px; padding: 5rem 4rem; position: relative; overflow: hidden; }
   .cta-inner::before { content: ''; position: absolute; top: -50%; right: -20%; width: 60%; height: 200%; background: radial-gradient(ellipse, rgba(139,158,124,0.1) 0%, transparent 70%); border-radius: 50%; }
   .cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; margin-bottom: 1rem; position: relative; }
@@ -271,6 +287,7 @@
   <ul class="nav-links">
     <li><a href="#marchi">Marchi</a></li>
     <li><a href="#chi-siamo">Chi Siamo</a></li>
+    <li><a href="#nuovi-marchi">Nuovi Marchi</a></li>
     <li><a href="#perche-noi">Vantaggi</a></li>
     <li><a href="contatti.html" class="nav-cta">Diventa Rivenditore</a></li>
   </ul>
@@ -283,9 +300,9 @@
   <div class="hero-organic-shape-2"></div>
   <div class="hero-content">
     <div class="hero-text">
-      <div class="hero-badge">Distributore in Europa 🇧🇷 🇪🇺</div>
-      <h1>Cosmetici Naturali dall'<em>Essenza</em> Autentica</h1>
-      <p class="hero-desc">Distribuiamo in tutta Europa i migliori marchi indipendenti brasiliani di cosmesi naturale, integratori e cura dei capelli. Portiamo l'autenticità della bellezza brasiliana sugli scaffali del tuo negozio.</p>
+      <div class="hero-badge">Importatore e Distributore UE 🌎 🇪🇺</div>
+      <h1>Prodotti Naturali dall'<em>Essenza</em> Autentica</h1>
+      <p class="hero-desc">Importiamo e distribuiamo in tutta Europa i migliori micro-marchi indipendenti dall'America Latina e dagli Stati Uniti: cosmetici naturali, biologici, integratori vitaminici e prodotti HBA. Portiamo l'autenticità sugli scaffali del tuo negozio.</p>
       <div class="hero-buttons">
         <a href="contatti.html" class="btn-primary">Diventa Rivenditore <span>→</span></a>
       </div>
@@ -306,32 +323,53 @@
 
 <!-- BRANDS -->
 <section class="brands-section" id="marchi">
-  <div class="section-label">I Nostri Marchi Partner</div>
-  <div class="section-title">I Migliori Marchi <em>Indipendenti</em> dal Brasile</div>
-  <p class="section-subtitle">Collaboriamo direttamente con piccoli produttori brasiliani appassionati, portando i loro prodotti naturali ai rivenditori di tutta Europa.</p>
+  <div class="section-label">Le Nostre Categorie</div>
+  <div class="section-title">Micro-Marchi <em>Indipendenti</em> dall'America Latina e dagli USA</div>
+  <p class="section-subtitle">Importiamo e distribuiamo in Europa prodotti selezionati da piccoli produttori indipendenti latinoamericani e americani, specializzati in cosmetici naturali, biologici, HBA e integratori.</p>
 
-  <!-- Brazilian brands -->
+  <!-- ROW 1: Latin America -->
   <div class="brands-marquee-wrapper">
     <div class="brands-marquee">
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/suryabrasil.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Surya Brasil"><div class="brand-text-logo" style="display:none">Surya Brasil</div><div class="brand-origin">Brasile/Italia · Hennè Capelli</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/simpleorganic.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Simple Organic"><div class="brand-text-logo uppercase" style="display:none">Simple Organic</div><div class="brand-origin">Brasile · Clean Beauty</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/baimsnatural.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Baims"><div class="brand-text-logo minimal" style="display:none">Baims</div><div class="brand-origin">Brasile · Trucco Biologico</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/bysamia.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="By Samia"><div class="brand-text-logo italic" style="display:none">By Samia</div><div class="brand-origin">Brasile · Aromaterapia</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/livecostabrazil.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Costa Brazil"><div class="brand-text-logo" style="display:none">Costa Brazil</div><div class="brand-origin">Brasile · Lusso Amazzonico</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/lolacosmetics.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Lola Cosmetics"><div class="brand-text-logo" style="display:none">Lola Cosmetics</div><div class="brand-origin">Brasile · Cura Capelli</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/almanati.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Almanati"><div class="brand-text-logo minimal" style="display:none">Almanati</div><div class="brand-origin">Brasile · Skincare Naturale</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/sallve.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Sallve"><div class="brand-text-logo uppercase" style="display:none">Sallve</div><div class="brand-origin">Brasile · Skincare Attivo</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/carenaturalbeauty.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Care Natural Beauty"><div class="brand-text-logo italic" style="display:none">Care Natural Beauty</div><div class="brand-origin">Brasile · Eco Skincare</div></div></div>
-      <!-- duplicate -->
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/suryabrasil.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Surya Brasil"><div class="brand-text-logo" style="display:none">Surya Brasil</div><div class="brand-origin">Brasile/Italia · Hennè Capelli</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/simpleorganic.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Simple Organic"><div class="brand-text-logo uppercase" style="display:none">Simple Organic</div><div class="brand-origin">Brasile · Clean Beauty</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/baimsnatural.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Baims"><div class="brand-text-logo minimal" style="display:none">Baims</div><div class="brand-origin">Brasile · Trucco Biologico</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/bysamia.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="By Samia"><div class="brand-text-logo italic" style="display:none">By Samia</div><div class="brand-origin">Brasile · Aromaterapia</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/livecostabrazil.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Costa Brazil"><div class="brand-text-logo" style="display:none">Costa Brazil</div><div class="brand-origin">Brasile · Lusso Amazzonico</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/lolacosmetics.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Lola Cosmetics"><div class="brand-text-logo" style="display:none">Lola Cosmetics</div><div class="brand-origin">Brasile · Cura Capelli</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/almanati.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Almanati"><div class="brand-text-logo minimal" style="display:none">Almanati</div><div class="brand-origin">Brasile · Skincare Naturale</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/sallve.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Sallve"><div class="brand-text-logo uppercase" style="display:none">Sallve</div><div class="brand-origin">Brasile · Skincare Attivo</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/carenaturalbeauty.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Care Natural Beauty"><div class="brand-text-logo italic" style="display:none">Care Natural Beauty</div><div class="brand-origin">Brasile · Eco Skincare</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">🌿</div><div class="brand-origin">America Latina · Hennè & Capelli</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">💄</div><div class="brand-origin">America Latina · Trucco Biologico</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">✨</div><div class="brand-origin">America Latina · Lusso Amazzonico</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">💆</div><div class="brand-origin">America Latina · Cura Capelli</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">🧴</div><div class="brand-origin">America Latina · Clean Beauty</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">🌱</div><div class="brand-origin">America Latina · Skincare Naturale</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">🫧</div><div class="brand-origin">America Latina · Aromaterapia</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">🍃</div><div class="brand-origin">America Latina · Eco Skincare</div></div></div>
+      <!-- duplicate for loop -->
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">🌿</div><div class="brand-origin">America Latina · Hennè & Capelli</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">💄</div><div class="brand-origin">America Latina · Trucco Biologico</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">✨</div><div class="brand-origin">America Latina · Lusso Amazzonico</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">💆</div><div class="brand-origin">America Latina · Cura Capelli</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">🧴</div><div class="brand-origin">America Latina · Clean Beauty</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">🌱</div><div class="brand-origin">America Latina · Skincare Naturale</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">🫧</div><div class="brand-origin">America Latina · Aromaterapia</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">🍃</div><div class="brand-origin">America Latina · Eco Skincare</div></div></div>
+    </div>
+  </div>
+
+  <!-- ROW 2: US -->
+  <div class="brands-marquee-wrapper">
+    <div class="brands-marquee reverse">
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">🧼</div><div class="brand-origin">USA · Saponi Biologici</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">🌾</div><div class="brand-origin">USA · Skincare Farm-to-Face</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">💋</div><div class="brand-origin">USA · Clean Makeup</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">🧴</div><div class="brand-origin">USA · Skincare Naturale</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">💊</div><div class="brand-origin">USA · Integratori Bio</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">🍊</div><div class="brand-origin">USA · Vitamine Naturali</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">🪥</div><div class="brand-origin">USA · HBA Naturale</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">🌿</div><div class="brand-origin">USA · Benessere & Wellness</div></div></div>
+      <!-- duplicate for loop -->
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">🧼</div><div class="brand-origin">USA · Saponi Biologici</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">🌾</div><div class="brand-origin">USA · Skincare Farm-to-Face</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">💋</div><div class="brand-origin">USA · Clean Makeup</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">🧴</div><div class="brand-origin">USA · Skincare Naturale</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">💊</div><div class="brand-origin">USA · Integratori Bio</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">🍊</div><div class="brand-origin">USA · Vitamine Naturali</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">🪥</div><div class="brand-origin">USA · HBA Naturale</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><div class="brand-category-icon">🌿</div><div class="brand-origin">USA · Benessere & Wellness</div></div></div>
     </div>
   </div>
 </section>
@@ -344,14 +382,14 @@
   </div>
   <div class="about-text">
     <div class="section-label">Chi Siamo</div>
-    <h2>Il Ponte tra il <em>Brasile</em> e il Mercato Europeo</h2>
-    <p>Natuessence Italy S.R.L. è nata con una missione chiara: rendere accessibili in Europa i migliori cosmetici naturali e biologici prodotti da piccoli marchi indipendenti brasiliani. Selezioniamo con cura brand che condividono il nostro impegno per la bellezza pulita e sostenibile.</p>
-    <p>Dalla cura dei capelli a base di hennè alla skincare certificata biologica, gestiamo l'intera filiera distributiva — logistica, conformità normativa, partnership commerciali — così che i nostri brand partner possano concentrarsi su ciò che fanno meglio: creare prodotti straordinari.</p>
+    <h2>Il Vostro <em>Importatore</em> e Distributore in Europa</h2>
+    <p>Natuessence Italy S.R.L. è nata con una missione chiara: importare e rendere accessibili nel mercato europeo i migliori prodotti naturali, biologici e integratori da piccoli marchi indipendenti dell'America Latina e degli Stati Uniti. Selezioniamo con cura brand che condividono il nostro impegno per la qualità autentica.</p>
+    <p>Dalla cura dei capelli a base di hennè agli integratori vitaminici, dai cosmetici biologici ai prodotti HBA, gestiamo l'intera filiera di importazione e distribuzione — sdoganamento, conformità normativa UE, logistica e partnership commerciali — così che i nostri brand partner possano concentrarsi su ciò che fanno meglio.</p>
     <div class="about-features">
-      <div class="about-feature"><div class="about-feature-icon">📦</div><h4>Distribuzione Completa</h4><p>Magazzino, fulfillment e logistica in tutta Europa</p></div>
-      <div class="about-feature"><div class="about-feature-icon">📋</div><h4>Conformità Normativa</h4><p>CPNP, regolamenti UE cosmetici e supporto documentale</p></div>
-      <div class="about-feature"><div class="about-feature-icon">🇧🇷</div><h4>Eccellenza Brasiliana</h4><p>Accesso esclusivo ai migliori marchi indie brasiliani di cosmesi naturale</p></div>
-      <div class="about-feature"><div class="about-feature-icon">🤝</div><h4>Partnership Commerciali</h4><p>Rete consolidata di rivenditori, erboristerie e negozi bio</p></div>
+      <div class="about-feature"><div class="about-feature-icon">🚢</div><h4>Importazione Diretta</h4><p>Sdoganamento, documentazione e importazione dall'America Latina e dagli USA</p></div>
+      <div class="about-feature"><div class="about-feature-icon">📋</div><h4>Conformità Normativa UE</h4><p>CPNP, regolamenti UE cosmetici, integratori e supporto documentale</p></div>
+      <div class="about-feature"><div class="about-feature-icon">📦</div><h4>Distribuzione Europea</h4><p>Magazzino, fulfillment e logistica in tutta Europa</p></div>
+      <div class="about-feature"><div class="about-feature-icon">🤝</div><h4>Partnership Commerciali</h4><p>Rete consolidata di rivenditori, erboristerie, farmacie e negozi bio</p></div>
     </div>
   </div>
 </section>
@@ -361,21 +399,58 @@
   <div class="section-label">Perché Scegliere Noi</div>
   <div class="section-title">I Nostri <em>Vantaggi</em> per i Rivenditori</div>
   <div class="values-grid">
-    <div class="value-item"><div class="value-number">01</div><h3>Solo Piccole Produzioni</h3><p>Nessun marchio di massa. Ogni prodotto proviene da produttori indipendenti brasiliani che lavorano in piccoli lotti con attenzione ossessiva alla qualità e agli ingredienti naturali.</p></div>
-    <div class="value-item"><div class="value-number">02</div><h3>Certificato e Pulito</h3><p>Andiamo oltre i regolamenti UE. Ogni ingrediente è verificato, ogni claim controllato. Nessun greenwashing — solo bellezza vegetale onesta e funzionale.</p></div>
-    <div class="value-item"><div class="value-number">03</div><h3>Supporto Commerciale</h3><p>Materiale marketing, formazione prodotto, supporto visual merchandising e analisi delle tendenze del mercato beauty naturale.</p></div>
+    <div class="value-item"><div class="value-number">01</div><h3>Solo Micro-Marchi Selezionati</h3><p>Nessun marchio di massa. Ogni prodotto proviene da produttori indipendenti latinoamericani e americani che lavorano in piccoli lotti con attenzione ossessiva alla qualità e agli ingredienti naturali.</p></div>
+    <div class="value-item"><div class="value-number">02</div><h3>Importazione e Conformità UE</h3><p>Gestiamo l'intero processo di importazione: sdoganamento, registrazione CPNP, conformità regolamenti UE su cosmetici e integratori. Nessun problema normativo per i nostri partner.</p></div>
+    <div class="value-item"><div class="value-number">03</div><h3>Supporto Commerciale</h3><p>Materiale marketing, formazione prodotto, supporto visual merchandising e analisi delle tendenze del mercato beauty naturale e integratori.</p></div>
   </div>
 </section>
 
 
 
+<!-- CERCHIAMO NUOVI MARCHI -->
+<section class="brands-wanted" id="nuovi-marchi">
+  <div class="brands-wanted-inner">
+    <div class="section-label">Espandiamo il Nostro Portfolio</div>
+    <div class="section-title">Cerchiamo <em>Nuovi Marchi</em> da Importare</div>
+    <p class="section-subtitle">Siamo costantemente alla ricerca di micro-marchi indipendenti dall'America Latina e dagli Stati Uniti che vogliono entrare nel mercato europeo. Se il tuo brand rientra in una di queste categorie, vogliamo conoscerti.</p>
+
+    <div class="brands-wanted-grid">
+      <div class="wanted-card">
+        <span class="wanted-icon">🌿</span>
+        <h3>Cosmetici Naturali & Biologici</h3>
+        <p>Skincare, haircare e trucco formulati con ingredienti naturali, biologici e certificati. Clean beauty senza compromessi.</p>
+      </div>
+      <div class="wanted-card">
+        <span class="wanted-icon">💊</span>
+        <h3>Integratori & Vitamine</h3>
+        <p>Integratori alimentari, vitamine, minerali e superfood naturali. Prodotti con formulazioni innovative e ingredienti di qualità.</p>
+      </div>
+      <div class="wanted-card">
+        <span class="wanted-icon">🧴</span>
+        <h3>HBA — Health, Beauty & Accessories</h3>
+        <p>Prodotti per l'igiene personale, cura del corpo, saponi naturali, deodoranti bio e accessori beauty ecosostenibili.</p>
+      </div>
+      <div class="wanted-card">
+        <span class="wanted-icon">🌱</span>
+        <h3>Benessere & Aromaterapia</h3>
+        <p>Oli essenziali, prodotti per aromaterapia, rimedi naturali e prodotti wellness per corpo e mente.</p>
+      </div>
+    </div>
+
+    <p class="section-subtitle">Offriamo ai nuovi brand partner: importazione diretta, registrazione CPNP, conformità normativa UE, magazzino e distribuzione in tutta Europa. Il tuo unico pensiero sarà creare prodotti straordinari.</p>
+    <div class="brands-wanted-cta">
+      <a href="brand-partner.html" class="btn-primary">Proponi il Tuo Brand <span>→</span></a>
+    </div>
+  </div>
+</section>
+
 <!-- CTA BRAND -->
 <section class="cta">
   <div class="cta-inner">
     <div class="section-label">Per i Marchi</div>
-    <h2>Sei un Piccolo Brand <em>Naturale?</em></h2>
-    <p>Se produci cosmetici naturali o integratori in Brasile, in piccoli lotti con passione e integrità, ci piacerebbe conoscere la tua storia e distribuire i tuoi prodotti in Europa.</p>
-    <a href="/cdn-cgi/l/email-protection#99f0f7fff6d9f7f8edecfceaeafcf7fafcb7f0ed" class="btn-primary">Candidati Come Brand <span>→</span></a>
+    <h2>Sei un Micro-Brand <em>Naturale?</em></h2>
+    <p>Che tu sia in America Latina o negli Stati Uniti — se produci cosmetici naturali, integratori, prodotti HBA o benessere in piccoli lotti con passione e integrità, ci piacerebbe importare e distribuire i tuoi prodotti in Europa.</p>
+    <a href="brand-partner.html" class="btn-primary">Candidati Come Brand <span>→</span></a>
   </div>
 </section>
 
@@ -384,15 +459,15 @@
   <div class="footer-top">
     <div>
       <div class="footer-brand-name">Natu<span>essence</span></div>
-      <p class="footer-desc">Distributore e rivenditore europeo di cosmetici naturali, biologici e integratori da produttori indipendenti brasiliani.</p>
+      <p class="footer-desc">Importatore e distributore europeo di cosmetici naturali, biologici, integratori e prodotti HBA da micro-marchi indipendenti dall'America Latina e dagli Stati Uniti.</p>
       <div class="footer-badges">
-        <span class="footer-badge">🇪🇺 Conforme UE</span>
-        <span class="footer-badge">🐰 Cruelty-Free</span>
+        <span class="footer-badge">🇪🇺 Importatore UE</span>
+        <span class="footer-badge">🌎 America Latina & USA</span>
         <span class="footer-badge">🌿 CPNP Registrato</span>
       </div>
     </div>
-    <div class="footer-col"><h4>Marchi</h4><a href="#marchi">I Nostri Marchi</a><a href="#">Cura Capelli</a><a href="#">Cura della Pelle</a><a href="#">Integratori</a><a href="#">Corpo & Bagno</a></div>
-    <div class="footer-col"><h4>Azienda</h4><a href="#">Chi Siamo</a><a href="#">I Nostri Marchi</a><a href="contatti.html">Diventa Rivenditore</a><a href="#">Diventa Brand Partner</a><a href="#">Conformità Normativa</a></div>
+    <div class="footer-col"><h4>Categorie</h4><a href="#marchi">I Nostri Marchi</a><a href="#">Cosmetici Naturali</a><a href="#">Integratori & Vitamine</a><a href="#">HBA</a><a href="#">Benessere</a></div>
+    <div class="footer-col"><h4>Azienda</h4><a href="#">Chi Siamo</a><a href="#">I Nostri Marchi</a><a href="contatti.html">Diventa Rivenditore</a><a href="brand-partner.html">Diventa Brand Partner</a><a href="#">Conformità Normativa</a></div>
     <div class="footer-col"><h4>Contatti</h4><a href="#">Chi Siamo</a><a href="#">Via Libero Temolo, 5, Milano, Italia</a></div>
   </div>
   <div class="footer-bottom">
