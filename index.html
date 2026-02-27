@@ -1,367 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Natuessence — Europe's Clean Beauty Shop</title>
+<title>Natuessence Italy — Distributore Cosmetici Naturali</title>
+<meta name="description" content="Natuessence Italy S.R.L. — Distributore e rivenditore europeo di cosmetici naturali, biologici e integratori da piccoli produttori indipendenti del Brasile e d'Europa.">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --sage: #8B9E7C;
-    --sage-light: #A8B89A;
-    --sage-dark: #6B7E5C;
-    --cream: #F5F0E8;
-    --cream-dark: #E8E0D0;
-    --charcoal: #2C2C2C;
-    --warm-white: #FDFBF7;
-    --terracotta: #C4805A;
-    --terracotta-light: #D4956F;
-    --olive: #5C6B4A;
-    --sand: #D4C8B0;
-    --forest: #3A4A2E;
+    --sage: #8B9E7C; --sage-light: #A8B89A; --sage-dark: #6B7E5C;
+    --cream: #F5F0E8; --cream-dark: #E8E0D0;
+    --charcoal: #2C2C2C; --warm-white: #FDFBF7;
+    --terracotta: #C4805A; --terracotta-light: #D4956F;
+    --olive: #5C6B4A; --sand: #D4C8B0; --forest: #3A4A2E;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
+  body { font-family: 'Outfit', sans-serif; background: var(--warm-white); color: var(--charcoal); overflow-x: hidden; }
 
-  body {
-    font-family: 'Outfit', sans-serif;
-    background: var(--warm-white);
-    color: var(--charcoal);
-    overflow-x: hidden;
-  }
-
-  /* ===== NAVBAR ===== */
+  /* NAV */
   nav {
     position: fixed; top: 0; width: 100%; z-index: 1000;
-    padding: 1.2rem 4%;
-    display: flex; align-items: center; justify-content: space-between;
-    background: rgba(253,251,247,0.92);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(139,158,124,0.1);
-    transition: all 0.4s ease;
+    padding: 1.2rem 4%; display: flex; align-items: center; justify-content: space-between;
+    background: rgba(253,251,247,0.92); backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(139,158,124,0.1); transition: all 0.4s ease;
   }
   nav.scrolled { padding: 0.8rem 4%; box-shadow: 0 4px 30px rgba(0,0,0,0.04); }
-
-  .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem; font-weight: 500;
-    color: var(--forest); letter-spacing: 0.05em;
-    text-decoration: none;
-  }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 500; color: var(--forest); letter-spacing: 0.05em; text-decoration: none; }
   .nav-logo span { color: var(--terracotta); }
-
   .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
-  .nav-links a {
-    text-decoration: none; color: var(--charcoal);
-    font-size: 0.85rem; font-weight: 400;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    position: relative; transition: color 0.3s;
-  }
-  .nav-links a::after {
-    content: ''; position: absolute; bottom: -4px; left: 0;
-    width: 0; height: 1.5px; background: var(--terracotta);
-    transition: width 0.3s ease;
-  }
+  .nav-links a { text-decoration: none; color: var(--charcoal); font-size: 0.85rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; position: relative; transition: color 0.3s; }
+  .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1.5px; background: var(--terracotta); transition: width 0.3s ease; }
   .nav-links a:hover { color: var(--terracotta); }
   .nav-links a:hover::after { width: 100%; }
-
-  .nav-cta {
-    background: var(--forest) !important; color: var(--warm-white) !important;
-    padding: 0.65rem 1.8rem; border-radius: 50px;
-    font-size: 0.8rem !important; letter-spacing: 0.1em !important;
-    transition: all 0.3s ease !important;
-  }
+  .nav-cta { background: var(--forest) !important; color: var(--warm-white) !important; padding: 0.65rem 1.8rem; border-radius: 50px; font-size: 0.8rem !important; letter-spacing: 0.1em !important; transition: all 0.3s ease !important; }
   .nav-cta:hover { background: var(--terracotta) !important; transform: translateY(-1px); }
   .nav-cta::after { display: none !important; }
 
-  .nav-cart { position: relative; font-size: 1.2rem; cursor: pointer; text-decoration: none !important; }
-  .nav-cart::after { display: none !important; }
-  .cart-count {
-    position: absolute; top: -8px; right: -10px;
-    background: var(--terracotta); color: white;
-    font-size: 0.6rem; width: 16px; height: 16px;
-    border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-weight: 600;
-  }
-
-  /* ===== HERO ===== */
+  /* HERO */
   .hero {
     min-height: 100vh; display: flex; align-items: center;
     position: relative; overflow: hidden;
     background: linear-gradient(135deg, var(--warm-white) 0%, var(--cream) 50%, var(--cream-dark) 100%);
   }
-  .hero-bg-pattern {
-    position: absolute; inset: 0; opacity: 0.035;
-    background-image: radial-gradient(circle at 2px 2px, var(--sage-dark) 1px, transparent 0);
-    background-size: 40px 40px;
-  }
-  .hero-organic-shape {
-    position: absolute; right: -10%; top: -15%; width: 70vw; height: 130vh;
-    background: radial-gradient(ellipse at center, rgba(139,158,124,0.12) 0%, transparent 70%);
-    border-radius: 50%; animation: float 12s ease-in-out infinite;
-  }
-  .hero-organic-shape-2 {
-    position: absolute; left: -20%; bottom: -30%; width: 50vw; height: 50vw;
-    background: radial-gradient(ellipse at center, rgba(196,128,90,0.08) 0%, transparent 70%);
-    border-radius: 50%; animation: float 15s ease-in-out infinite reverse;
-  }
-  @keyframes float {
-    0%, 100% { transform: translate(0, 0) rotate(0deg); }
-    33% { transform: translate(20px, -30px) rotate(1deg); }
-    66% { transform: translate(-15px, 15px) rotate(-1deg); }
-  }
+  .hero-bg-pattern { position: absolute; inset: 0; opacity: 0.035; background-image: radial-gradient(circle at 2px 2px, var(--sage-dark) 1px, transparent 0); background-size: 40px 40px; }
+  .hero-organic-shape { position: absolute; right: -10%; top: -15%; width: 70vw; height: 130vh; background: radial-gradient(ellipse at center, rgba(139,158,124,0.12) 0%, transparent 70%); border-radius: 50%; animation: float 12s ease-in-out infinite; }
+  .hero-organic-shape-2 { position: absolute; left: -20%; bottom: -30%; width: 50vw; height: 50vw; background: radial-gradient(ellipse at center, rgba(196,128,90,0.08) 0%, transparent 70%); border-radius: 50%; animation: float 15s ease-in-out infinite reverse; }
+  @keyframes float { 0%, 100% { transform: translate(0,0) rotate(0deg); } 33% { transform: translate(20px,-30px) rotate(1deg); } 66% { transform: translate(-15px,15px) rotate(-1deg); } }
 
-  .hero-content {
-    position: relative; z-index: 2;
-    max-width: 1400px; margin: 0 auto;
-    padding: 8rem 6% 4rem;
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 4rem; align-items: center;
-  }
+  .hero-content { position: relative; z-index: 2; max-width: 1400px; margin: 0 auto; padding: 8rem 6% 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
   .hero-text { animation: slideUp 1s ease 0.3s both; }
   @keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
 
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    background: rgba(139,158,124,0.12); border: 1px solid rgba(139,158,124,0.2);
-    padding: 0.5rem 1.2rem; border-radius: 50px;
-    font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--sage-dark); margin-bottom: 2rem;
-  }
-  .hero-badge::before {
-    content: ''; width: 6px; height: 6px;
-    background: var(--sage); border-radius: 50%;
-    animation: pulse 2s ease-in-out infinite;
-  }
+  .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(139,158,124,0.12); border: 1px solid rgba(139,158,124,0.2); padding: 0.5rem 1.2rem; border-radius: 50px; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sage-dark); margin-bottom: 2rem; }
+  .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--sage); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
   @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 
-  .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3rem, 5.5vw, 5rem); font-weight: 300;
-    line-height: 1.1; color: var(--charcoal); margin-bottom: 1.5rem;
-  }
+  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 5.5vw, 4.8rem); font-weight: 300; line-height: 1.1; color: var(--charcoal); margin-bottom: 1.5rem; }
   .hero h1 em { font-style: italic; color: var(--terracotta); font-weight: 400; }
-
-  .hero-desc {
-    font-size: 1.05rem; line-height: 1.8; color: #666;
-    font-weight: 300; max-width: 480px; margin-bottom: 2.5rem;
-  }
+  .hero-desc { font-size: 1.05rem; line-height: 1.8; color: #666; font-weight: 300; max-width: 500px; margin-bottom: 2.5rem; }
   .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-  .btn-primary {
-    background: var(--forest); color: var(--warm-white);
-    padding: 1rem 2.5rem; border: none; border-radius: 50px;
-    font-family: 'Outfit', sans-serif; font-size: 0.85rem;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    cursor: pointer; transition: all 0.4s ease;
-    text-decoration: none; display: inline-flex; align-items: center; gap: 0.6rem;
-  }
+  .btn-primary { background: var(--forest); color: var(--warm-white); padding: 1rem 2.5rem; border: none; border-radius: 50px; font-family: 'Outfit', sans-serif; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: all 0.4s ease; text-decoration: none; display: inline-flex; align-items: center; gap: 0.6rem; }
   .btn-primary:hover { background: var(--terracotta); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(196,128,90,0.25); }
-
-  .btn-secondary {
-    background: transparent; color: var(--charcoal);
-    padding: 1rem 2.5rem; border: 1.5px solid var(--sand); border-radius: 50px;
-    font-family: 'Outfit', sans-serif; font-size: 0.85rem;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    cursor: pointer; transition: all 0.3s ease; text-decoration: none;
-  }
+  .btn-secondary { background: transparent; color: var(--charcoal); padding: 1rem 2.5rem; border: 1.5px solid var(--sand); border-radius: 50px; font-family: 'Outfit', sans-serif; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: all 0.3s ease; text-decoration: none; }
   .btn-secondary:hover { border-color: var(--terracotta); color: var(--terracotta); }
 
   .hero-visual { position: relative; animation: slideUp 1s ease 0.6s both; }
-  .hero-image-wrapper {
-    position: relative; border-radius: 200px 200px 40px 40px;
-    overflow: hidden; aspect-ratio: 3/4;
-    background: linear-gradient(180deg, var(--sage-light) 0%, var(--sage) 100%);
-    box-shadow: 0 40px 80px rgba(0,0,0,0.08);
-  }
-  .hero-image-wrapper::before {
-    content: ''; position: absolute; inset: 0; z-index: 1;
-    background: radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.3) 0%, transparent 60%), radial-gradient(ellipse at 70% 80%, rgba(58,74,46,0.2) 0%, transparent 60%);
-  }
+  .hero-image-wrapper { position: relative; border-radius: 200px 200px 40px 40px; overflow: hidden; aspect-ratio: 3/4; background: linear-gradient(180deg, var(--sage-light) 0%, var(--sage) 100%); box-shadow: 0 40px 80px rgba(0,0,0,0.08); }
+  .hero-image-wrapper::before { content: ''; position: absolute; inset: 0; z-index: 1; background: radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.3) 0%, transparent 60%), radial-gradient(ellipse at 70% 80%, rgba(58,74,46,0.2) 0%, transparent 60%); }
   .hero-plant-illustration { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
   .plant-svg { width: 70%; height: 70%; opacity: 0.3; }
-
-  .hero-floating-card {
-    position: absolute; background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(10px); border-radius: 16px;
-    padding: 1.2rem 1.5rem; box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-    animation: floatCard 6s ease-in-out infinite;
-  }
+  .hero-floating-card { position: absolute; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-radius: 16px; padding: 1.2rem 1.5rem; box-shadow: 0 8px 32px rgba(0,0,0,0.08); animation: floatCard 6s ease-in-out infinite; }
   .hero-floating-card.card-1 { bottom: 15%; left: -15%; animation-delay: -2s; }
   .hero-floating-card.card-2 { top: 20%; right: -10%; animation-delay: -4s; }
   @keyframes floatCard { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-
   .card-stat { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; color: var(--forest); }
   .card-label { font-size: 0.72rem; color: #888; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 0.2rem; }
 
-  /* ===== PERKS ===== */
-  .perks-bar {
-    background: var(--forest); padding: 2.2rem 6%;
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; text-align: center;
-  }
-  .perk-item { display: flex; align-items: center; justify-content: center; gap: 0.8rem; }
-  .perk-icon { font-size: 1.3rem; }
-  .perk-text { font-size: 0.78rem; color: rgba(255,255,255,0.85); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 400; }
+  /* STATS BAR */
+  .stats-bar { background: var(--forest); padding: 3rem 6%; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center; }
+  .stat-number { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; color: var(--warm-white); }
+  .stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.6); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.3rem; }
 
-  /* ===== BRANDS MARQUEE ===== */
-  .brands-section {
-    padding: 5rem 6%; background: var(--cream);
-    text-align: center; overflow: hidden;
-  }
+  /* BRANDS */
+  .brands-section { padding: 5rem 6%; background: var(--cream); text-align: center; overflow: hidden; }
   .section-label { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage-dark); margin-bottom: 0.8rem; }
   .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; color: var(--charcoal); margin-bottom: 1rem; }
   .section-title em { font-style: italic; color: var(--terracotta); }
-  .section-subtitle { font-size: 0.92rem; color: #888; font-weight: 300; max-width: 600px; margin: 0 auto 3rem; line-height: 1.7; }
+  .section-subtitle { font-size: 0.92rem; color: #888; font-weight: 300; max-width: 650px; margin: 0 auto 3rem; line-height: 1.7; }
 
-  .brands-marquee-wrapper {
-    overflow: hidden;
-    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-    margin-bottom: 1.5rem;
-  }
-  .brands-marquee {
-    display: flex; gap: 0;
-    animation: marquee 50s linear infinite;
-    width: max-content;
-  }
+  .brands-marquee-wrapper { overflow: hidden; mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent); margin-bottom: 1.5rem; }
+  .brands-marquee { display: flex; gap: 0; animation: marquee 50s linear infinite; width: max-content; }
   .brands-marquee.reverse { animation: marquee-reverse 55s linear infinite; }
   @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   @keyframes marquee-reverse { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 
-  .brand-card {
-    flex-shrink: 0; width: 200px; height: 90px;
-    background: var(--warm-white); border-radius: 14px;
-    display: flex; align-items: center; justify-content: center;
-    margin: 0 0.5rem; padding: 1rem 1.2rem;
-    border: 1px solid rgba(139,158,124,0.1);
-    transition: all 0.3s ease; cursor: pointer;
-  }
-  .brand-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.06);
-    border-color: var(--sage-light);
-  }
+  .brand-card { flex-shrink: 0; width: 200px; height: 90px; background: var(--warm-white); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 0.5rem; padding: 1rem 1.2rem; border: 1px solid rgba(139,158,124,0.1); transition: all 0.3s ease; cursor: pointer; }
+  .brand-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.06); border-color: var(--sage-light); }
   .brand-inner { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.4rem; }
-
-  .brand-logo {
-    height: 32px; max-width: 120px;
-    object-fit: contain;
-    filter: grayscale(100%) brightness(0.4);
-    opacity: 0.7;
-    transition: all 0.3s ease;
-  }
-  .brand-card:hover .brand-logo {
-    filter: grayscale(0%) brightness(1);
-    opacity: 1;
-  }
-
-  .brand-origin {
-    font-size: 0.58rem; color: #bbb;
-    letter-spacing: 0.1em; text-transform: uppercase;
-  }
-
-  /* Text fallback for brands where logo fails */
-  .brand-text-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem; font-weight: 600;
-    color: #555; letter-spacing: 0.02em;
-    transition: color 0.3s;
-    line-height: 1.2;
-  }
+  .brand-logo { height: 32px; max-width: 120px; object-fit: contain; filter: grayscale(100%) brightness(0.4); opacity: 0.7; transition: all 0.3s ease; }
+  .brand-card:hover .brand-logo { filter: grayscale(0%) brightness(1); opacity: 1; }
+  .brand-origin { font-size: 0.58rem; color: #bbb; letter-spacing: 0.1em; text-transform: uppercase; }
+  .brand-text-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: #555; letter-spacing: 0.02em; transition: color 0.3s; line-height: 1.2; }
   .brand-card:hover .brand-text-logo { color: var(--charcoal); }
   .brand-text-logo.uppercase { font-family: 'Outfit', sans-serif; text-transform: uppercase; font-size: 0.68rem; letter-spacing: 0.15em; font-weight: 600; }
   .brand-text-logo.minimal { font-family: 'Outfit', sans-serif; font-weight: 300; font-size: 0.95rem; letter-spacing: 0.06em; }
   .brand-text-logo.italic { font-style: italic; }
 
-  /* ===== CATEGORIES ===== */
-  .categories { padding: 6rem 6%; background: var(--cream); }
-  .categories-header { text-align: center; margin-bottom: 4rem; }
-  .categories-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
-
-  .category-card {
-    background: var(--warm-white); border-radius: 20px; padding: 2.5rem 2rem;
-    text-align: center; transition: all 0.4s ease; cursor: pointer;
-    border: 1px solid transparent; position: relative; overflow: hidden;
-  }
-  .category-card::before {
-    content: ''; position: absolute; inset: 0;
-    background: linear-gradient(180deg, transparent 50%, rgba(139,158,124,0.06) 100%);
-    opacity: 0; transition: opacity 0.4s;
-  }
-  .category-card:hover::before { opacity: 1; }
-  .category-card:hover { border-color: var(--sage-light); transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.06); }
-  .category-icon { font-size: 2.8rem; margin-bottom: 1.2rem; display: block; }
-  .category-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 500; margin-bottom: 0.5rem; }
-  .category-card p { font-size: 0.78rem; color: #999; line-height: 1.6; }
-  .category-count { margin-top: 1rem; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); font-weight: 500; }
-
-  /* ===== FEATURED PRODUCTS ===== */
-  .featured { padding: 6rem 6%; max-width: 1400px; margin: 0 auto; }
-  .featured-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; }
-  .featured-header .btn-secondary { padding: 0.7rem 1.8rem; font-size: 0.75rem; }
-  .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
-
-  .product-card {
-    background: var(--warm-white); border-radius: 16px; overflow: hidden;
-    border: 1px solid rgba(139,158,124,0.08); transition: all 0.4s ease; cursor: pointer;
-  }
-  .product-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.07); border-color: var(--sage-light); }
-
-  .product-image {
-    aspect-ratio: 1; background: var(--cream);
-    display: flex; align-items: center; justify-content: center;
-    position: relative; overflow: hidden;
-  }
-  .product-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 60%, rgba(245,240,232,0.5) 100%); }
-  .product-emoji { font-size: 3.5rem; opacity: 0.7; }
-
-  .product-tag {
-    position: absolute; top: 12px; left: 12px;
-    background: var(--terracotta); color: white;
-    font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase;
-    padding: 0.3rem 0.7rem; border-radius: 50px; font-weight: 500; z-index: 1;
-  }
-  .product-tag.new { background: var(--sage-dark); }
-  .product-tag.eco { background: var(--olive); }
-  .product-tag.br { background: #2D6A4F; }
-
-  .product-info { padding: 1.2rem 1.4rem 1.5rem; }
-  .product-brand { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sage); font-weight: 500; margin-bottom: 0.3rem; }
-  .product-name { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 500; margin-bottom: 0.5rem; line-height: 1.3; }
-  .product-bottom { display: flex; justify-content: space-between; align-items: center; }
-  .product-price { font-weight: 500; color: var(--forest); font-size: 1rem; }
-  .product-price .currency { font-size: 0.8rem; }
-
-  .add-to-cart {
-    width: 36px; height: 36px; border-radius: 50%;
-    border: 1.5px solid var(--sand); background: transparent;
-    cursor: pointer; display: flex; align-items: center; justify-content: center;
-    font-size: 1rem; transition: all 0.3s ease; color: var(--charcoal);
-  }
-  .add-to-cart:hover { background: var(--forest); border-color: var(--forest); color: white; }
-
-  /* ===== ABOUT ===== */
-  .about {
-    padding: 8rem 6%; max-width: 1400px; margin: 0 auto;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;
-  }
+  /* ABOUT */
+  .about { padding: 8rem 6%; max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
   .about-visual { position: relative; }
-  .about-image {
-    width: 100%; aspect-ratio: 4/5; border-radius: 24px;
-    background: linear-gradient(145deg, var(--cream) 0%, var(--sage-light) 100%);
-    position: relative; overflow: hidden;
-  }
+  .about-image { width: 100%; aspect-ratio: 4/5; border-radius: 24px; background: linear-gradient(145deg, var(--cream) 0%, var(--sage-light) 100%); position: relative; overflow: hidden; }
   .about-image::before { content: ''; position: absolute; inset: 2rem; border: 1px solid rgba(255,255,255,0.4); border-radius: 16px; }
   .about-image-inner { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; }
   .leaf-circle { width: 120px; height: 120px; border-radius: 50%; border: 2px solid rgba(58,74,46,0.2); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
   .about-image-text { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; color: var(--forest); opacity: 0.6; }
   .about-accent { position: absolute; top: -20px; right: -20px; width: 140px; height: 140px; border-radius: 50%; background: var(--terracotta); opacity: 0.08; }
-
   .about-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 300; line-height: 1.2; margin-bottom: 1.5rem; }
   .about-text h2 em { font-style: italic; color: var(--terracotta); }
   .about-text p { color: #666; line-height: 1.9; font-weight: 300; margin-bottom: 1.2rem; font-size: 0.95rem; }
-
   .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem; }
   .about-feature { padding: 1.2rem; background: var(--cream); border-radius: 12px; transition: all 0.3s ease; }
   .about-feature:hover { background: var(--warm-white); box-shadow: 0 8px 30px rgba(0,0,0,0.04); transform: translateY(-2px); }
@@ -369,65 +127,106 @@
   .about-feature h4 { font-size: 0.85rem; font-weight: 500; margin-bottom: 0.3rem; }
   .about-feature p { font-size: 0.78rem !important; color: #999 !important; margin-bottom: 0 !important; line-height: 1.5 !important; }
 
-  /* ===== VALUES ===== */
+  /* CATEGORIES */
+  .categories { padding: 6rem 6%; background: var(--cream); }
+  .categories-header { text-align: center; margin-bottom: 4rem; }
+  .categories-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  .category-card { background: var(--warm-white); border-radius: 20px; padding: 2.5rem 2rem; text-align: center; transition: all 0.4s ease; cursor: pointer; border: 1px solid transparent; position: relative; overflow: hidden; }
+  .category-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(139,158,124,0.06) 100%); opacity: 0; transition: opacity 0.4s; }
+  .category-card:hover::before { opacity: 1; }
+  .category-card:hover { border-color: var(--sage-light); transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.06); }
+  .category-icon { font-size: 2.8rem; margin-bottom: 1.2rem; display: block; }
+  .category-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 500; margin-bottom: 0.5rem; }
+  .category-card p { font-size: 0.78rem; color: #999; line-height: 1.6; }
+
+  /* VALUES */
   .values { padding: 8rem 6%; max-width: 1200px; margin: 0 auto; text-align: center; }
   .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-top: 4rem; }
   .value-number { font-family: 'Cormorant Garamond', serif; font-size: 5rem; font-weight: 300; color: var(--cream-dark); line-height: 1; margin-bottom: 1rem; }
   .value-item h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 500; margin-bottom: 0.8rem; }
   .value-item p { font-size: 0.85rem; color: #888; line-height: 1.8; font-weight: 300; }
 
-  /* ===== TESTIMONIALS ===== */
-  .testimonials { padding: 6rem 6%; background: var(--forest); position: relative; overflow: hidden; }
-  .testimonials::before { content: ''; position: absolute; inset: 0; opacity: 0.03; background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 30px 30px; }
-  .testimonials .section-label { color: var(--sage-light); }
-  .testimonials .section-title { color: var(--warm-white); }
-  .testimonials .section-title em { color: var(--terracotta-light); }
-  .testimonials-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-
-  .testimonial-card {
-    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 16px; padding: 2rem; backdrop-filter: blur(10px); transition: all 0.3s ease;
+  /* RETAILER SIGNUP */
+  .retailer-signup {
+    padding: 6rem 6%;
+    background: var(--forest);
+    position: relative;
+    overflow: hidden;
   }
-  .testimonial-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-4px); }
-  .testimonial-stars { color: var(--terracotta-light); font-size: 0.9rem; margin-bottom: 1rem; letter-spacing: 0.1em; }
-  .testimonial-text { color: rgba(255,255,255,0.8); font-size: 0.9rem; line-height: 1.8; font-weight: 300; margin-bottom: 1.5rem; font-style: italic; }
-  .testimonial-author { display: flex; align-items: center; gap: 0.8rem; }
-  .testimonial-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--sage); display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; font-weight: 500; }
-  .testimonial-name { color: var(--warm-white); font-size: 0.85rem; font-weight: 500; }
-  .testimonial-role { color: rgba(255,255,255,0.4); font-size: 0.72rem; }
-
-  /* ===== NEWSLETTER ===== */
-  .newsletter { padding: 6rem 6%; text-align: center; background: var(--cream); }
-  .newsletter-inner { max-width: 600px; margin: 0 auto; }
-  .newsletter-form { display: flex; gap: 0.8rem; margin-top: 2rem; }
-  .newsletter-input {
-    flex: 1; padding: 1rem 1.5rem; border: 1.5px solid var(--sand);
-    border-radius: 50px; background: var(--warm-white);
-    font-family: 'Outfit', sans-serif; font-size: 0.9rem;
-    color: var(--charcoal); outline: none; transition: border-color 0.3s;
+  .retailer-signup::before { content: ''; position: absolute; inset: 0; opacity: 0.03; background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 30px 30px; }
+  .retailer-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
   }
-  .newsletter-input:focus { border-color: var(--sage); }
-  .newsletter-input::placeholder { color: #bbb; }
+  .retailer-text .section-label { color: var(--sage-light); }
+  .retailer-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 300; color: var(--warm-white); line-height: 1.2; margin-bottom: 1rem; }
+  .retailer-text h2 em { font-style: italic; color: var(--terracotta-light); }
+  .retailer-text p { color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.8; font-weight: 300; }
+  .retailer-benefits { list-style: none; margin-top: 1.5rem; }
+  .retailer-benefits li { color: rgba(255,255,255,0.75); font-size: 0.85rem; padding: 0.4rem 0; padding-left: 1.5rem; position: relative; font-weight: 300; }
+  .retailer-benefits li::before { content: '✓'; position: absolute; left: 0; color: var(--sage-light); font-weight: 600; }
 
-  /* ===== CTA ===== */
+  .retailer-form-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+  }
+  .retailer-form-card h3 { color: var(--warm-white); font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; margin-bottom: 1.5rem; text-align: center; }
+  .form-group { margin-bottom: 1rem; }
+  .form-input {
+    width: 100%; padding: 0.85rem 1.2rem;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px; color: var(--warm-white);
+    font-family: 'Outfit', sans-serif; font-size: 0.85rem;
+    outline: none; transition: border-color 0.3s;
+  }
+  .form-input:focus { border-color: var(--sage-light); }
+  .form-input::placeholder { color: rgba(255,255,255,0.35); }
+  .form-input.textarea { resize: vertical; min-height: 80px; }
+  .form-select {
+    width: 100%; padding: 0.85rem 1.2rem;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px; color: rgba(255,255,255,0.7);
+    font-family: 'Outfit', sans-serif; font-size: 0.85rem;
+    outline: none; appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff50' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+  }
+  .form-select option { background: var(--charcoal); color: white; }
+  .form-submit {
+    width: 100%; padding: 1rem;
+    background: var(--terracotta); color: white;
+    border: none; border-radius: 50px;
+    font-family: 'Outfit', sans-serif; font-size: 0.85rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer; transition: all 0.3s ease;
+    margin-top: 0.5rem;
+  }
+  .form-submit:hover { background: var(--terracotta-light); transform: translateY(-1px); }
+  .form-note { text-align: center; margin-top: 1rem; font-size: 0.7rem; color: rgba(255,255,255,0.3); }
+
+  /* CTA */
   .cta { padding: 8rem 6%; text-align: center; background: var(--warm-white); }
-  .cta-inner {
-    max-width: 800px; margin: 0 auto;
-    background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
-    border-radius: 32px; padding: 5rem 4rem; position: relative; overflow: hidden;
-  }
+  .cta-inner { max-width: 800px; margin: 0 auto; background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%); border-radius: 32px; padding: 5rem 4rem; position: relative; overflow: hidden; }
   .cta-inner::before { content: ''; position: absolute; top: -50%; right: -20%; width: 60%; height: 200%; background: radial-gradient(ellipse, rgba(139,158,124,0.1) 0%, transparent 70%); border-radius: 50%; }
   .cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; margin-bottom: 1rem; position: relative; }
   .cta h2 em { font-style: italic; color: var(--terracotta); }
   .cta p { color: #888; font-weight: 300; max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.7; position: relative; }
 
-  /* ===== FOOTER ===== */
+  /* FOOTER */
   footer { background: var(--charcoal); padding: 4rem 6% 2rem; color: rgba(255,255,255,0.6); }
-  .footer-top {
-    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem;
-    margin-bottom: 3rem; padding-bottom: 3rem;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-  }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
   .footer-brand-name { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--warm-white); margin-bottom: 1rem; }
   .footer-brand-name span { color: var(--terracotta-light); }
   .footer-desc { font-size: 0.85rem; line-height: 1.7; font-weight: 300; max-width: 300px; }
@@ -438,7 +237,7 @@
   .footer-col a:hover { color: var(--terracotta-light); }
   .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: rgba(255,255,255,0.3); flex-wrap: wrap; gap: 1rem; }
 
-  /* ===== RESPONSIVE ===== */
+  /* RESPONSIVE */
   @media (max-width: 1024px) {
     .hero-content { grid-template-columns: 1fr; text-align: center; }
     .hero-desc { margin: 0 auto 2.5rem; }
@@ -447,18 +246,15 @@
     .about { grid-template-columns: 1fr; gap: 3rem; }
     .about-visual { order: -1; max-width: 500px; margin: 0 auto; }
     .categories-grid { grid-template-columns: repeat(2, 1fr); }
-    .products-grid { grid-template-columns: repeat(2, 1fr); }
-    .testimonials-grid { grid-template-columns: 1fr; max-width: 600px; }
+    .retailer-inner { grid-template-columns: 1fr; gap: 2.5rem; }
     .footer-top { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 768px) {
     .nav-links { display: none; }
-    .perks-bar { grid-template-columns: repeat(2, 1fr); gap: 1rem; padding: 1.5rem 6%; }
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
     .about-features { grid-template-columns: 1fr; }
     .values-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .categories-grid, .products-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
-    .featured-header { flex-direction: column; gap: 1rem; align-items: flex-start; }
-    .newsletter-form { flex-direction: column; }
+    .categories-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
     .cta-inner { padding: 3rem 2rem; }
     .footer-top { grid-template-columns: 1fr; }
     .footer-bottom { flex-direction: column; text-align: center; }
@@ -473,27 +269,26 @@
 <nav id="navbar">
   <a href="#" class="nav-logo">Natu<span>essence</span></a>
   <ul class="nav-links">
-    <li><a href="#brands">Brands</a></li>
-    <li><a href="#categories">Shop</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#values">Our Values</a></li>
-    <li><a href="#" class="nav-cart">🛒<span class="cart-count">0</span></a></li>
-    <li><a href="#categories" class="nav-cta">Shop Now</a></li>
+    <li><a href="#marchi">Marchi</a></li>
+    <li><a href="#catalogo">Catalogo</a></li>
+    <li><a href="#chi-siamo">Chi Siamo</a></li>
+    <li><a href="#perche-noi">Vantaggi</a></li>
+    <li><a href="contatti.html" class="nav-cta">Diventa Rivenditore</a></li>
   </ul>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-bg-pattern"></div>
   <div class="hero-organic-shape"></div>
   <div class="hero-organic-shape-2"></div>
   <div class="hero-content">
     <div class="hero-text">
-      <div class="hero-badge">Europe's Indie Beauty Shop 🇪🇺</div>
-      <h1>Small Brands, <em>Big Impact</em></h1>
-      <p class="hero-desc">We curate Europe's and Brazil's most exciting independent natural beauty brands — artisan skincare, plant-based hair care, Amazonian botanicals, and clean cosmetics crafted in small batches by passionate makers.</p>
+      <div class="hero-badge">Distributore Europeo 🇪🇺 🇧🇷</div>
+      <h1>Cosmetici Naturali dall'<em>Essenza</em> Autentica</h1>
+      <p class="hero-desc">Distribuiamo in tutta Europa i migliori marchi indipendenti di cosmesi naturale, integratori e cura dei capelli dal Brasile e dall'Europa. Portiamo l'autenticità sugli scaffali del tuo negozio.</p>
       <div class="hero-buttons">
-        <a href="#categories" class="btn-primary">Shop the Collection <span>→</span></a>
-        <a href="#brands" class="btn-secondary">Meet Our Brands</a>
+        <a href="contatti.html" class="btn-primary">Diventa Rivenditore <span>→</span></a>
       </div>
     </div>
     <div class="hero-visual">
@@ -502,206 +297,151 @@
           <svg class="plant-svg" viewBox="0 0 200 300" fill="none"><path d="M100 280 C100 280 100 150 100 100 C80 60 40 40 30 20 C60 30 90 60 100 100" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none"/><path d="M100 200 C120 160 160 140 180 130 C150 150 120 170 100 200" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none"/><path d="M100 240 C75 210 40 200 20 190 C50 200 80 220 100 240" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none"/><path d="M100 160 C130 130 170 120 190 100 C160 120 130 140 100 160" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" fill="none"/><circle cx="100" cy="95" r="4" fill="rgba(255,255,255,0.3)"/><circle cx="180" cy="128" r="3" fill="rgba(255,255,255,0.2)"/><circle cx="20" cy="188" r="3" fill="rgba(255,255,255,0.2)"/></svg>
         </div>
       </div>
-      <div class="hero-floating-card card-1"><div class="card-stat">30+</div><div class="card-label">Indie Brands</div></div>
-      <div class="hero-floating-card card-2"><div class="card-stat">100%</div><div class="card-label">Clean & Natural</div></div>
+      <div class="hero-floating-card card-1"><div class="card-stat">30+</div><div class="card-label">Marchi Indipendenti</div></div>
+      <div class="hero-floating-card card-2"><div class="card-stat">100%</div><div class="card-label">Naturale e Certificato</div></div>
     </div>
   </div>
 </section>
 
-<div class="perks-bar">
-  <div class="perk-item"><span class="perk-icon">🚚</span><span class="perk-text">Free EU Shipping over €50</span></div>
-  <div class="perk-item"><span class="perk-icon">🌿</span><span class="perk-text">100% Natural & Certified</span></div>
-  <div class="perk-item"><span class="perk-icon">🐰</span><span class="perk-text">Cruelty-Free Always</span></div>
-  <div class="perk-item"><span class="perk-icon">📦</span><span class="perk-text">Plastic-Free Packaging</span></div>
-</div>
 
-<!-- BRANDS WITH LOGOS -->
-<section class="brands-section" id="brands">
-  <div class="section-label">Our Curated Brand Partners</div>
-  <div class="section-title">Europe & Brazil's Finest <em>Independent</em> Makers</div>
-  <p class="section-subtitle">From Amazonian botanicals to Scandinavian forest rituals — we partner directly with small producers who craft with integrity, bringing their best to your doorstep.</p>
 
-  <!-- ROW 1: European brands -->
+<!-- BRANDS -->
+<section class="brands-section" id="marchi">
+  <div class="section-label">I Nostri Marchi Partner</div>
+  <div class="section-title">I Migliori Marchi <em>Indipendenti</em> d'Europa e Brasile</div>
+  <p class="section-subtitle">Collaboriamo direttamente con piccoli produttori appassionati dall'UE e dal Brasile, portando i loro prodotti migliori ai rivenditori di tutta Europa.</p>
+
+  <!-- ROW 1: European -->
   <div class="brands-marquee-wrapper">
-    <div class="brands-marquee" id="marquee1">
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/bjorkandberries.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Björk & Berries"><div class="brand-text-logo" style="display:none">Björk & Berries</div><div class="brand-origin">Sweden · Forest Botanicals</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/nuicosmetics.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Nui Cosmetics"><div class="brand-text-logo uppercase" style="display:none">Nui Cosmetics</div><div class="brand-origin">Germany · Natural Makeup</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/larosee-cosmetiques.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="La Rosée"><div class="brand-text-logo minimal" style="display:none">La Rosée</div><div class="brand-origin">France · Dermo-Cosmetics</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/unbottled.co" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Unbottled"><div class="brand-text-logo uppercase" style="display:none">Unbottled</div><div class="brand-origin">France · Zero-Waste Solids</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/perpurr.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Per Purr"><div class="brand-text-logo" style="display:none">Per Purr</div><div class="brand-origin">Spain · Body Care</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/rowsebeauty.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Rowse"><div class="brand-text-logo minimal" style="display:none">Rowse</div><div class="brand-origin">Spain · Raw Skincare</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/seasonly.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Seasonly"><div class="brand-text-logo" style="display:none">Seasonly</div><div class="brand-origin">France · Personalised Care</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/catarinabarbosa.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Catarina Barbosa"><div class="brand-text-logo italic" style="display:none">Catarina Barbosa</div><div class="brand-origin">Portugal · Artisan Skincare</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/twinskin.ie" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Twin Skin"><div class="brand-text-logo" style="display:none">Twin Skin</div><div class="brand-origin">Ireland · Microbiome Skincare</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/dalunaturalskincare.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="DALÚ"><div class="brand-text-logo italic" style="display:none">DALÚ</div><div class="brand-origin">Slovenia · Botanical Science</div></div></div>
-      <!-- duplicate for loop -->
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/bjorkandberries.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Björk & Berries"><div class="brand-text-logo" style="display:none">Björk & Berries</div><div class="brand-origin">Sweden · Forest Botanicals</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/nuicosmetics.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Nui Cosmetics"><div class="brand-text-logo uppercase" style="display:none">Nui Cosmetics</div><div class="brand-origin">Germany · Natural Makeup</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/larosee-cosmetiques.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="La Rosée"><div class="brand-text-logo minimal" style="display:none">La Rosée</div><div class="brand-origin">France · Dermo-Cosmetics</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/unbottled.co" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Unbottled"><div class="brand-text-logo uppercase" style="display:none">Unbottled</div><div class="brand-origin">France · Zero-Waste Solids</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/perpurr.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Per Purr"><div class="brand-text-logo" style="display:none">Per Purr</div><div class="brand-origin">Spain · Body Care</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/rowsebeauty.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Rowse"><div class="brand-text-logo minimal" style="display:none">Rowse</div><div class="brand-origin">Spain · Raw Skincare</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/seasonly.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Seasonly"><div class="brand-text-logo" style="display:none">Seasonly</div><div class="brand-origin">France · Personalised Care</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/catarinabarbosa.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Catarina Barbosa"><div class="brand-text-logo italic" style="display:none">Catarina Barbosa</div><div class="brand-origin">Portugal · Artisan Skincare</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/twinskin.ie" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Twin Skin"><div class="brand-text-logo" style="display:none">Twin Skin</div><div class="brand-origin">Ireland · Microbiome Skincare</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/dalunaturalskincare.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="DALÚ"><div class="brand-text-logo italic" style="display:none">DALÚ</div><div class="brand-origin">Slovenia · Botanical Science</div></div></div>
-    </div>
-  </div>
-
-  <!-- ROW 2: Brazilian brands (reverse direction) -->
-  <div class="brands-marquee-wrapper">
-    <div class="brands-marquee reverse" id="marquee2">
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/suryabrasil.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Surya Brasil"><div class="brand-text-logo" style="display:none">Surya Brasil</div><div class="brand-origin">Brazil/Italy · Henna Hair Care</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/simpleorganic.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Simple Organic"><div class="brand-text-logo uppercase" style="display:none">Simple Organic</div><div class="brand-origin">Brazil · Clean Beauty Pioneer</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/baimsnatural.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Baims"><div class="brand-text-logo minimal" style="display:none">Baims</div><div class="brand-origin">Brazil · Organic Makeup</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/bysamia.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="By Samia"><div class="brand-text-logo italic" style="display:none">By Samia</div><div class="brand-origin">Brazil · Aromatherapy</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/livecostabrazil.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Costa Brazil"><div class="brand-text-logo" style="display:none">Costa Brazil</div><div class="brand-origin">Brazil · Amazonian Luxury</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/lolacosmetics.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Lola Cosmetics"><div class="brand-text-logo" style="display:none">Lola Cosmetics</div><div class="brand-origin">Brazil · Hair Care</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/almanati.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Almanati"><div class="brand-text-logo minimal" style="display:none">Almanati</div><div class="brand-origin">Brazil · Natural Skincare</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/sallve.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Sallve"><div class="brand-text-logo uppercase" style="display:none">Sallve</div><div class="brand-origin">Brazil · Active Skincare</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/carenaturalbeauty.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Care Natural Beauty"><div class="brand-text-logo italic" style="display:none">Care Natural Beauty</div><div class="brand-origin">Brazil · Eco Skincare</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/granfrutosbr.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Gran Frutos"><div class="brand-text-logo" style="display:none">Gran Frutos</div><div class="brand-origin">Brazil · Supplements</div></div></div>
+    <div class="brands-marquee">
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/bjorkandberries.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Björk & Berries"><div class="brand-text-logo" style="display:none">Björk & Berries</div><div class="brand-origin">Svezia · Botanica Nordica</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/nuicosmetics.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Nui Cosmetics"><div class="brand-text-logo uppercase" style="display:none">Nui Cosmetics</div><div class="brand-origin">Germania · Trucco Naturale</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/larosee-cosmetiques.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="La Rosée"><div class="brand-text-logo minimal" style="display:none">La Rosée</div><div class="brand-origin">Francia · Dermo-Cosmetici</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/unbottled.co" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Unbottled"><div class="brand-text-logo uppercase" style="display:none">Unbottled</div><div class="brand-origin">Francia · Zero Plastica</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/perpurr.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Per Purr"><div class="brand-text-logo" style="display:none">Per Purr</div><div class="brand-origin">Spagna · Cura del Corpo</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/rowsebeauty.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Rowse"><div class="brand-text-logo minimal" style="display:none">Rowse</div><div class="brand-origin">Spagna · Skincare Puro</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/seasonly.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Seasonly"><div class="brand-text-logo" style="display:none">Seasonly</div><div class="brand-origin">Francia · Cura Personalizzata</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/catarinabarbosa.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Catarina Barbosa"><div class="brand-text-logo italic" style="display:none">Catarina Barbosa</div><div class="brand-origin">Portogallo · Skincare Artigianale</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/twinskin.ie" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Twin Skin"><div class="brand-text-logo" style="display:none">Twin Skin</div><div class="brand-origin">Irlanda · Microbioma</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/dalunaturalskincare.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="DALÚ"><div class="brand-text-logo italic" style="display:none">DALÚ</div><div class="brand-origin">Slovenia · Scienza Botanica</div></div></div>
       <!-- duplicate -->
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/suryabrasil.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Surya Brasil"><div class="brand-text-logo" style="display:none">Surya Brasil</div><div class="brand-origin">Brazil/Italy · Henna Hair Care</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/simpleorganic.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Simple Organic"><div class="brand-text-logo uppercase" style="display:none">Simple Organic</div><div class="brand-origin">Brazil · Clean Beauty Pioneer</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/baimsnatural.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Baims"><div class="brand-text-logo minimal" style="display:none">Baims</div><div class="brand-origin">Brazil · Organic Makeup</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/bysamia.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="By Samia"><div class="brand-text-logo italic" style="display:none">By Samia</div><div class="brand-origin">Brazil · Aromatherapy</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/livecostabrazil.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Costa Brazil"><div class="brand-text-logo" style="display:none">Costa Brazil</div><div class="brand-origin">Brazil · Amazonian Luxury</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/lolacosmetics.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Lola Cosmetics"><div class="brand-text-logo" style="display:none">Lola Cosmetics</div><div class="brand-origin">Brazil · Hair Care</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/almanati.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Almanati"><div class="brand-text-logo minimal" style="display:none">Almanati</div><div class="brand-origin">Brazil · Natural Skincare</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/sallve.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Sallve"><div class="brand-text-logo uppercase" style="display:none">Sallve</div><div class="brand-origin">Brazil · Active Skincare</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/carenaturalbeauty.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Care Natural Beauty"><div class="brand-text-logo italic" style="display:none">Care Natural Beauty</div><div class="brand-origin">Brazil · Eco Skincare</div></div></div>
-      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/granfrutosbr.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Gran Frutos"><div class="brand-text-logo" style="display:none">Gran Frutos</div><div class="brand-origin">Brazil · Supplements</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/bjorkandberries.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Björk & Berries"><div class="brand-text-logo" style="display:none">Björk & Berries</div><div class="brand-origin">Svezia · Botanica Nordica</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/nuicosmetics.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Nui Cosmetics"><div class="brand-text-logo uppercase" style="display:none">Nui Cosmetics</div><div class="brand-origin">Germania · Trucco Naturale</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/larosee-cosmetiques.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="La Rosée"><div class="brand-text-logo minimal" style="display:none">La Rosée</div><div class="brand-origin">Francia · Dermo-Cosmetici</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/unbottled.co" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Unbottled"><div class="brand-text-logo uppercase" style="display:none">Unbottled</div><div class="brand-origin">Francia · Zero Plastica</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/perpurr.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Per Purr"><div class="brand-text-logo" style="display:none">Per Purr</div><div class="brand-origin">Spagna · Cura del Corpo</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/rowsebeauty.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Rowse"><div class="brand-text-logo minimal" style="display:none">Rowse</div><div class="brand-origin">Spagna · Skincare Puro</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/seasonly.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Seasonly"><div class="brand-text-logo" style="display:none">Seasonly</div><div class="brand-origin">Francia · Cura Personalizzata</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/catarinabarbosa.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Catarina Barbosa"><div class="brand-text-logo italic" style="display:none">Catarina Barbosa</div><div class="brand-origin">Portogallo · Skincare Artigianale</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/twinskin.ie" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Twin Skin"><div class="brand-text-logo" style="display:none">Twin Skin</div><div class="brand-origin">Irlanda · Microbioma</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/dalunaturalskincare.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="DALÚ"><div class="brand-text-logo italic" style="display:none">DALÚ</div><div class="brand-origin">Slovenia · Scienza Botanica</div></div></div>
+    </div>
+  </div>
+
+  <!-- ROW 2: Brazilian -->
+  <div class="brands-marquee-wrapper">
+    <div class="brands-marquee reverse">
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/suryabrasil.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Surya Brasil"><div class="brand-text-logo" style="display:none">Surya Brasil</div><div class="brand-origin">Brasile/Italia · Hennè Capelli</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/simpleorganic.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Simple Organic"><div class="brand-text-logo uppercase" style="display:none">Simple Organic</div><div class="brand-origin">Brasile · Clean Beauty</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/baimsnatural.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Baims"><div class="brand-text-logo minimal" style="display:none">Baims</div><div class="brand-origin">Brasile · Trucco Biologico</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/bysamia.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="By Samia"><div class="brand-text-logo italic" style="display:none">By Samia</div><div class="brand-origin">Brasile · Aromaterapia</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/livecostabrazil.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Costa Brazil"><div class="brand-text-logo" style="display:none">Costa Brazil</div><div class="brand-origin">Brasile · Lusso Amazzonico</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/lolacosmetics.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Lola Cosmetics"><div class="brand-text-logo" style="display:none">Lola Cosmetics</div><div class="brand-origin">Brasile · Cura Capelli</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/almanati.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Almanati"><div class="brand-text-logo minimal" style="display:none">Almanati</div><div class="brand-origin">Brasile · Skincare Naturale</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/sallve.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Sallve"><div class="brand-text-logo uppercase" style="display:none">Sallve</div><div class="brand-origin">Brasile · Skincare Attivo</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/carenaturalbeauty.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Care Natural Beauty"><div class="brand-text-logo italic" style="display:none">Care Natural Beauty</div><div class="brand-origin">Brasile · Eco Skincare</div></div></div>
+      <!-- duplicate -->
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/suryabrasil.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Surya Brasil"><div class="brand-text-logo" style="display:none">Surya Brasil</div><div class="brand-origin">Brasile/Italia · Hennè Capelli</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/simpleorganic.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Simple Organic"><div class="brand-text-logo uppercase" style="display:none">Simple Organic</div><div class="brand-origin">Brasile · Clean Beauty</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/baimsnatural.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Baims"><div class="brand-text-logo minimal" style="display:none">Baims</div><div class="brand-origin">Brasile · Trucco Biologico</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/bysamia.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="By Samia"><div class="brand-text-logo italic" style="display:none">By Samia</div><div class="brand-origin">Brasile · Aromaterapia</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/livecostabrazil.com" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Costa Brazil"><div class="brand-text-logo" style="display:none">Costa Brazil</div><div class="brand-origin">Brasile · Lusso Amazzonico</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/lolacosmetics.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Lola Cosmetics"><div class="brand-text-logo" style="display:none">Lola Cosmetics</div><div class="brand-origin">Brasile · Cura Capelli</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/almanati.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Almanati"><div class="brand-text-logo minimal" style="display:none">Almanati</div><div class="brand-origin">Brasile · Skincare Naturale</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/sallve.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Sallve"><div class="brand-text-logo uppercase" style="display:none">Sallve</div><div class="brand-origin">Brasile · Skincare Attivo</div></div></div>
+      <div class="brand-card"><div class="brand-inner"><img src="https://logo.clearbit.com/carenaturalbeauty.com.br" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt="Care Natural Beauty"><div class="brand-text-logo italic" style="display:none">Care Natural Beauty</div><div class="brand-origin">Brasile · Eco Skincare</div></div></div>
     </div>
   </div>
 </section>
 
-<section class="categories reveal" id="categories">
+<!-- CATALOGO -->
+<section class="categories reveal" id="catalogo">
   <div class="categories-header">
-    <div class="section-label">Shop by Category</div>
-    <div class="section-title">Curated <em>Clean Beauty</em> Collections</div>
+    <div class="section-label">Il Nostro Catalogo</div>
+    <div class="section-title">Categorie di <em>Prodotti</em> Distribuiti</div>
   </div>
   <div class="categories-grid">
-    <div class="category-card"><span class="category-icon">💇‍♀️</span><h3>Hair Care</h3><p>Henna dyes, solid shampoos, botanical treatments & conditioners</p><div class="category-count">120+ Products</div></div>
-    <div class="category-card"><span class="category-icon">✨</span><h3>Skin Care</h3><p>Artisan serums, organic moisturisers, Amazonian oils & actives</p><div class="category-count">200+ Products</div></div>
-    <div class="category-card"><span class="category-icon">💊</span><h3>Supplements</h3><p>Plant-based vitamins, adaptogens, superfoods & wellness essentials</p><div class="category-count">60+ Products</div></div>
-    <div class="category-card"><span class="category-icon">🧘‍♀️</span><h3>Body & Bath</h3><p>Zero-waste solids, body oils, aromatherapy & bath rituals</p><div class="category-count">150+ Products</div></div>
+    <div class="category-card"><span class="category-icon">💇‍♀️</span><h3>Cura Capelli</h3><p>Tinture all'hennè, shampoo solidi, trattamenti botanici e balsami naturali</p></div>
+    <div class="category-card"><span class="category-icon">✨</span><h3>Cura della Pelle</h3><p>Sieri artigianali, creme biologiche, oli amazzonici e attivi fermentati</p></div>
+    <div class="category-card"><span class="category-icon">💊</span><h3>Integratori</h3><p>Vitamine vegetali, adattogeni, superfoods e integratori per il benessere</p></div>
+    <div class="category-card"><span class="category-icon">🧘‍♀️</span><h3>Corpo & Bagno</h3><p>Cosmetici solidi zero-waste, oli corpo, aromaterapia e rituali bagno</p></div>
   </div>
 </section>
 
-<section class="featured reveal" id="featured">
-  <div class="featured-header">
-    <div><div class="section-label">Bestsellers</div><div class="section-title">Customers' <em>Favourites</em></div></div>
-    <a href="#" class="btn-secondary">View All Products</a>
-  </div>
-  <div class="products-grid">
-    <div class="product-card">
-      <div class="product-image"><span class="product-tag new">New</span><span class="product-emoji">🧴</span></div>
-      <div class="product-info"><div class="product-brand">Catarina Barbosa · Portugal</div><div class="product-name">Rose Petal Regenerating Serum</div><div class="product-bottom"><div class="product-price"><span class="currency">€</span>38</div><button class="add-to-cart">+</button></div></div>
-    </div>
-    <div class="product-card">
-      <div class="product-image"><span class="product-tag">Bestseller</span><span class="product-emoji">🌿</span></div>
-      <div class="product-info"><div class="product-brand">Surya Brasil · Italy</div><div class="product-name">Henna Cream Hair Colour — Dark Brown</div><div class="product-bottom"><div class="product-price"><span class="currency">€</span>16</div><button class="add-to-cart">+</button></div></div>
-    </div>
-    <div class="product-card">
-      <div class="product-image"><span class="product-tag br">🇧🇷 Brazil</span><span class="product-emoji">🍃</span></div>
-      <div class="product-info"><div class="product-brand">Simple Organic · Brazil</div><div class="product-name">Vitamin C Serum — Natural Brightening</div><div class="product-bottom"><div class="product-price"><span class="currency">€</span>32</div><button class="add-to-cart">+</button></div></div>
-    </div>
-    <div class="product-card">
-      <div class="product-image"><span class="product-tag eco">Eco</span><span class="product-emoji">🫧</span></div>
-      <div class="product-info"><div class="product-brand">Unbottled · France</div><div class="product-name">Solid Shampoo — Hydrating Formula</div><div class="product-bottom"><div class="product-price"><span class="currency">€</span>12</div><button class="add-to-cart">+</button></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="about reveal" id="about">
+<!-- CHI SIAMO -->
+<section class="about reveal" id="chi-siamo">
   <div class="about-visual">
-    <div class="about-image"><div class="about-image-inner"><div class="leaf-circle">🌿</div><div class="about-image-text">Rooted in Nature</div></div></div>
+    <div class="about-image"><div class="about-image-inner"><div class="leaf-circle">🌿</div><div class="about-image-text">Radicati nella Natura</div></div></div>
     <div class="about-accent"></div>
   </div>
   <div class="about-text">
-    <div class="section-label">Our Story</div>
-    <h2>A Home for the World's <em>Hidden</em> Beauty Gems</h2>
-    <p>Natuessence was born from a simple frustration: some of the most extraordinary natural cosmetics brands — from small Portuguese labs and French farmhouses to Brazilian Amazonian producers — never reach the people who would love them most.</p>
-    <p>We built Natuessence as a curated online shop that brings independent, small-batch creators together in one place — with EU-wide shipping, transparent ingredient lists, and the stories behind every product.</p>
+    <div class="section-label">Chi Siamo</div>
+    <h2>Il Ponte tra <em>Natura</em> e Mercato Europeo</h2>
+    <p>Natuessence Italy S.R.L. è nata con una missione chiara: rendere accessibili in Europa i migliori cosmetici naturali e biologici prodotti da piccoli marchi indipendenti del Brasile e d'Europa. Selezioniamo con cura brand che condividono il nostro impegno per la bellezza pulita e sostenibile.</p>
+    <p>Dalla cura dei capelli a base di hennè alla skincare certificata biologica, gestiamo l'intera filiera distributiva — logistica, conformità normativa, partnership commerciali — così che i nostri brand partner possano concentrarsi su ciò che fanno meglio: creare prodotti straordinari.</p>
     <div class="about-features">
-      <div class="about-feature"><div class="about-feature-icon">🔍</div><h4>Hand-Curated Selection</h4><p>Every brand personally vetted for quality, ethics, and ingredient integrity</p></div>
-      <div class="about-feature"><div class="about-feature-icon">🇪🇺</div><h4>EU-Wide Delivery</h4><p>Fast, eco-friendly shipping to every EU member state</p></div>
-      <div class="about-feature"><div class="about-feature-icon">🇧🇷</div><h4>Brazilian Botanicals</h4><p>Exclusive access to Amazonian and Brazilian indie clean beauty</p></div>
-      <div class="about-feature"><div class="about-feature-icon">💚</div><h4>Supporting Small Makers</h4><p>Direct partnerships that help indie brands grow sustainably</p></div>
+      <div class="about-feature"><div class="about-feature-icon">📦</div><h4>Distribuzione Completa</h4><p>Magazzino, fulfillment e logistica in tutta Europa</p></div>
+      <div class="about-feature"><div class="about-feature-icon">📋</div><h4>Conformità Normativa</h4><p>CPNP, regolamenti UE cosmetici e supporto documentale</p></div>
+      <div class="about-feature"><div class="about-feature-icon">🇧🇷</div><h4>Botanica Brasiliana</h4><p>Accesso esclusivo ai marchi indie amazzonici e brasiliani</p></div>
+      <div class="about-feature"><div class="about-feature-icon">🤝</div><h4>Partnership Commerciali</h4><p>Rete consolidata di rivenditori, erboristerie e negozi bio</p></div>
     </div>
   </div>
 </section>
 
-<section class="values reveal" id="values">
-  <div class="section-label">Why Shop With Us</div>
-  <div class="section-title">Our <em>Promise</em> to You</div>
+<!-- PERCHÉ NOI -->
+<section class="values reveal" id="perche-noi">
+  <div class="section-label">Perché Scegliere Noi</div>
+  <div class="section-title">I Nostri <em>Vantaggi</em> per i Rivenditori</div>
   <div class="values-grid">
-    <div class="value-item"><div class="value-number">01</div><h3>Small-Batch Only</h3><p>No mass-market brands. Every product comes from independent makers who craft in small batches with obsessive attention to quality and sourcing.</p></div>
-    <div class="value-item"><div class="value-number">02</div><h3>Certified Clean</h3><p>We go beyond EU regulations. Every ingredient is scrutinised, every claim verified. No greenwashing — just honest, plant-powered beauty that works.</p></div>
-    <div class="value-item"><div class="value-number">03</div><h3>Discover Something New</h3><p>From Slovenian botanical science to Brazilian Amazonian oils to Irish fermented skincare — find brands you'd never encounter otherwise.</p></div>
+    <div class="value-item"><div class="value-number">01</div><h3>Solo Piccole Produzioni</h3><p>Nessun marchio di massa. Ogni prodotto proviene da produttori indipendenti europei e brasiliani che lavorano in piccoli lotti con attenzione ossessiva alla qualità.</p></div>
+    <div class="value-item"><div class="value-number">02</div><h3>Certificato e Pulito</h3><p>Andiamo oltre i regolamenti UE. Ogni ingrediente è verificato, ogni claim controllato. Nessun greenwashing — solo bellezza vegetale onesta e funzionale.</p></div>
+    <div class="value-item"><div class="value-number">03</div><h3>Supporto Commerciale</h3><p>Materiale marketing, formazione prodotto, supporto visual merchandising e analisi delle tendenze del mercato beauty naturale.</p></div>
   </div>
 </section>
 
-<section class="testimonials reveal" id="testimonials">
-  <div style="text-align:center; margin-bottom:3rem;">
-    <div class="section-label">Customer Love</div>
-    <div class="section-title">What Our <em>Community</em> Says</div>
-  </div>
-  <div class="testimonials-grid">
-    <div class="testimonial-card"><div class="testimonial-stars">★ ★ ★ ★ ★</div><div class="testimonial-text">"Finally, a shop that brings together European and Brazilian indie brands I've been hunting across different websites. The curation is superb and shipping to Germany was fast."</div><div class="testimonial-author"><div class="testimonial-avatar">KM</div><div><div class="testimonial-name">Katrin M.</div><div class="testimonial-role">Berlin, Germany</div></div></div></div>
-    <div class="testimonial-card"><div class="testimonial-stars">★ ★ ★ ★ ★</div><div class="testimonial-text">"The Brazilian brands are incredible — I'd never heard of Simple Organic or Baims before. Now they're staples in my routine. Love that they tell you the story behind each maker."</div><div class="testimonial-author"><div class="testimonial-avatar">CL</div><div><div class="testimonial-name">Chloé L.</div><div class="testimonial-role">Lyon, France</div></div></div></div>
-    <div class="testimonial-card"><div class="testimonial-stars">★ ★ ★ ★ ★</div><div class="testimonial-text">"The zero-waste packaging impressed me as much as the products. It's rare to find a shop where every brand genuinely meets the clean beauty standard they claim."</div><div class="testimonial-author"><div class="testimonial-avatar">EP</div><div><div class="testimonial-name">Emma P.</div><div class="testimonial-role">Amsterdam, Netherlands</div></div></div></div>
-  </div>
-</section>
 
-<section class="newsletter reveal">
-  <div class="newsletter-inner">
-    <div class="section-label">Stay in the Loop</div>
-    <div class="section-title">New Brands, <em>Exclusive Drops</em></div>
-    <p style="color:#888; font-weight:300; line-height:1.7; margin-top:0.5rem;">Be the first to discover new indie brands, get early access to limited editions, and receive 10% off your first order.</p>
-    <div class="newsletter-form"><input type="email" class="newsletter-input" placeholder="Your email address"><button class="btn-primary" style="white-space:nowrap;">Subscribe <span>→</span></button></div>
-  </div>
-</section>
 
-<section class="cta reveal" id="cta">
+<!-- CTA BRAND -->
+<section class="cta reveal">
   <div class="cta-inner">
-    <div class="section-label">For Indie Brands</div>
-    <h2>Are You a Small <em>Beauty Brand?</em></h2>
-    <p>European or Brazilian — if you craft natural cosmetics or supplements in small batches with integrity, we'd love to hear your story and bring your products to our community.</p>
-    <a href="/cdn-cgi/l/email-protection#e18393808f8592a18f809594849292848f8284cf828e8c" class="btn-primary">Apply to Sell With Us <span>→</span></a>
+    <div class="section-label">Per i Marchi</div>
+    <h2>Sei un Piccolo Brand <em>Naturale?</em></h2>
+    <p>Europeo o brasiliano — se produci cosmetici naturali o integratori in piccoli lotti con passione e integrità, ci piacerebbe conoscere la tua storia e distribuire i tuoi prodotti.</p>
+    <a href="/cdn-cgi/l/email-protection#b7d5c5d6d9d3c4f7d9d6c3c2d2c4c4d2d9d4d299dec3" class="btn-primary">Candidati Come Brand <span>→</span></a>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-top">
     <div>
       <div class="footer-brand-name">Natu<span>essence</span></div>
-      <p class="footer-desc">Europe's curated online shop for independent, natural cosmetics and supplements from small makers across the EU and Brazil.</p>
+      <p class="footer-desc">Distributore e rivenditore europeo di cosmetici naturali, biologici e integratori da produttori indipendenti di Brasile ed Europa.</p>
       <div class="footer-badges">
-        <span class="footer-badge">🇪🇺 EU Compliant</span>
+        <span class="footer-badge">🇪🇺 Conforme UE</span>
         <span class="footer-badge">🐰 Cruelty-Free</span>
-        <span class="footer-badge">🌿 CPNP Registered</span>
+        <span class="footer-badge">🌿 CPNP Registrato</span>
       </div>
     </div>
-    <div class="footer-col"><h4>Shop</h4><a href="#">All Products</a><a href="#">Hair Care</a><a href="#">Skin Care</a><a href="#">Supplements</a><a href="#">Body & Bath</a></div>
-    <div class="footer-col"><h4>Info</h4><a href="#">About Us</a><a href="#">Our Brands</a><a href="#">Shipping & Returns</a><a href="#">Ingredient Glossary</a><a href="#">Brand Partner Application</a></div>
-    <div class="footer-col"><h4>Contact</h4><a href="/cdn-cgi/l/email-protection#dab2bfb6b6b59ab4bbaeafbfa9a9bfb4b9bff4b9b5b7"><span class="__cf_email__" data-cfemail="c4aca1a8a8ab84aaa5b0b1a1b7b7a1aaa7a1eaa7aba9">[email&#160;protected]</span></a><a href="#">Milan, Italy</a><a href="#">Instagram</a><a href="#">Pinterest</a></div>
+    <div class="footer-col"><h4>Distribuzione</h4><a href="#">Catalogo Prodotti</a><a href="#">Cura Capelli</a><a href="#">Cura della Pelle</a><a href="#">Integratori</a><a href="#">Corpo & Bagno</a></div>
+    <div class="footer-col"><h4>Azienda</h4><a href="#">Chi Siamo</a><a href="#">I Nostri Marchi</a><a href="contatti.html">Diventa Rivenditore</a><a href="#">Diventa Brand Partner</a><a href="#">Conformità Normativa</a></div>
+    <div class="footer-col"><h4>Contatti</h4><a href="/cdn-cgi/l/email-protection#a9c0c7cfc6e9c7c8dddcccdadaccc7cacc87c0dd"><span class="__cf_email__" data-cfemail="ea83848c85aa848b9e9f8f99998f84898fc4839e">[email&#160;protected]</span></a><a href="#">Milano, Italia</a><a href="#">P.IVA: IT________</a><a href="#">Instagram</a><a href="#">LinkedIn</a></div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 Natuessence Italy S.R.L. All rights reserved.</span>
-    <span>Privacy · Terms · Cookie Policy</span>
+    <span>© 2026 Natuessence Italy S.R.L. Tutti i diritti riservati.</span>
+    <span>Privacy · Termini · Cookie Policy</span>
   </div>
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50); });
-  document.querySelectorAll('.reveal').forEach(el => {
-    new IntersectionObserver(([e]) => { if (e.isIntersecting) e.target.classList.add('visible'); }, { threshold: 0.1 }).observe(el);
-  });
-  let cartCount = 0;
-  document.querySelectorAll('.add-to-cart').forEach(btn => {
-    btn.addEventListener('click', () => {
-      cartCount++;
-      document.querySelector('.cart-count').textContent = cartCount;
-      btn.textCont
+  window.addEventListener('scroll', () => { document.getElementByI
