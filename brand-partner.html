@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Become a Brand Partner — Natuessence Italy</title>
-<meta name="description" content="Submit your brand for European distribution. Natuessence Italy imports and distributes natural cosmetics, supplements, and HBA products from Latin America and the USA across the EU market.">
+<title>Natuessence Italy — Importatore e Distributore UE di Cosmetici Naturali e Integratori</title>
+<meta name="description" content="Natuessence Italy S.R.L. — Importatore e distributore europeo di cosmetici naturali, biologici, integratori e HBA da micro-marchi indipendenti dall'America Latina e dagli Stati Uniti.">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -37,336 +37,386 @@
   .nav-cta:hover { background: var(--terracotta) !important; transform: translateY(-1px); }
   .nav-cta::after { display: none !important; }
 
-  /* PAGE HEADER */
-  .page-header {
-    padding: 10rem 6% 4rem;
+  /* HERO */
+  .hero {
+    min-height: 100vh; display: flex; align-items: center;
+    position: relative; overflow: hidden;
     background: linear-gradient(135deg, var(--warm-white) 0%, var(--cream) 50%, var(--cream-dark) 100%);
-    text-align: center; position: relative; overflow: hidden;
   }
-  .page-header::before {
-    content: ''; position: absolute; inset: 0; opacity: 0.035;
-    background-image: radial-gradient(circle at 2px 2px, var(--sage-dark) 1px, transparent 0);
-    background-size: 40px 40px;
-  }
-  .page-header-shape {
-    position: absolute; right: -15%; top: -30%; width: 50vw; height: 50vw;
-    background: radial-gradient(ellipse at center, rgba(139,158,124,0.1) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-  .page-header-shape-2 {
-    position: absolute; left: -10%; bottom: -40%; width: 40vw; height: 40vw;
-    background: radial-gradient(ellipse at center, rgba(196,128,90,0.08) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-  .page-header-content { position: relative; z-index: 1; }
+  .hero-bg-pattern { position: absolute; inset: 0; opacity: 0.035; background-image: radial-gradient(circle at 2px 2px, var(--sage-dark) 1px, transparent 0); background-size: 40px 40px; }
+  .hero-organic-shape { position: absolute; right: -10%; top: -15%; width: 70vw; height: 130vh; background: radial-gradient(ellipse at center, rgba(139,158,124,0.12) 0%, transparent 70%); border-radius: 50%; animation: float 12s ease-in-out infinite; }
+  .hero-organic-shape-2 { position: absolute; left: -20%; bottom: -30%; width: 50vw; height: 50vw; background: radial-gradient(ellipse at center, rgba(196,128,90,0.08) 0%, transparent 70%); border-radius: 50%; animation: float 15s ease-in-out infinite reverse; }
+  @keyframes float { 0%, 100% { transform: translate(0,0) rotate(0deg); } 33% { transform: translate(20px,-30px) rotate(1deg); } 66% { transform: translate(-15px,15px) rotate(-1deg); } }
+
+  .hero-content { position: relative; z-index: 2; max-width: 1400px; margin: 0 auto; padding: 8rem 6% 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .hero-text { animation: slideUp 1s ease 0.3s both; }
+  @keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+
+  .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(139,158,124,0.12); border: 1px solid rgba(139,158,124,0.2); padding: 0.5rem 1.2rem; border-radius: 50px; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sage-dark); margin-bottom: 2rem; }
+  .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--sage); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 5.5vw, 4.8rem); font-weight: 300; line-height: 1.1; color: var(--charcoal); margin-bottom: 1.5rem; }
+  .hero h1 em { font-style: italic; color: var(--terracotta); font-weight: 400; }
+  .hero-desc { font-size: 1.05rem; line-height: 1.8; color: #666; font-weight: 300; max-width: 500px; margin-bottom: 2.5rem; }
+  .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .btn-primary { background: var(--forest); color: var(--warm-white); padding: 1rem 2.5rem; border: none; border-radius: 50px; font-family: 'Outfit', sans-serif; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: all 0.4s ease; text-decoration: none; display: inline-flex; align-items: center; gap: 0.6rem; }
+  .btn-primary:hover { background: var(--terracotta); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(196,128,90,0.25); }
+  .btn-secondary { background: transparent; color: var(--charcoal); padding: 1rem 2.5rem; border: 1.5px solid var(--sand); border-radius: 50px; font-family: 'Outfit', sans-serif; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: all 0.3s ease; text-decoration: none; }
+  .btn-secondary:hover { border-color: var(--terracotta); color: var(--terracotta); }
+
+  .hero-visual { position: relative; animation: slideUp 1s ease 0.6s both; }
+  .hero-image-wrapper { position: relative; border-radius: 200px 200px 40px 40px; overflow: hidden; aspect-ratio: 3/4; background: linear-gradient(180deg, var(--sage-light) 0%, var(--sage) 100%); box-shadow: 0 40px 80px rgba(0,0,0,0.08); }
+  .hero-image-wrapper::before { content: ''; position: absolute; inset: 0; z-index: 1; background: radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.3) 0%, transparent 60%), radial-gradient(ellipse at 70% 80%, rgba(58,74,46,0.2) 0%, transparent 60%); }
+  .hero-plant-illustration { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+  .plant-svg { width: 70%; height: 70%; opacity: 0.3; }
+  .hero-floating-card { position: absolute; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-radius: 16px; padding: 1.2rem 1.5rem; box-shadow: 0 8px 32px rgba(0,0,0,0.08); animation: floatCard 6s ease-in-out infinite; }
+  .hero-floating-card.card-1 { bottom: 15%; left: -15%; animation-delay: -2s; }
+  .hero-floating-card.card-2 { top: 20%; right: -10%; animation-delay: -4s; }
+  @keyframes floatCard { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  .card-stat { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; color: var(--forest); }
+  .card-label { font-size: 0.72rem; color: #888; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 0.2rem; }
+
+  /* STATS BAR */
+  .stats-bar { background: var(--forest); padding: 3rem 6%; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center; }
+  .stat-number { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; color: var(--warm-white); }
+  .stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.6); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.3rem; }
+
+  /* BRANDS */
+  .brands-section { padding: 5rem 6%; background: var(--cream); text-align: center; overflow: hidden; }
   .section-label { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage-dark); margin-bottom: 0.8rem; }
-  .page-header h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.5rem, 4.5vw, 4rem); font-weight: 300;
-    line-height: 1.15; color: var(--charcoal); margin-bottom: 1rem;
-  }
-  .page-header h1 em { font-style: italic; color: var(--terracotta); font-weight: 400; }
-  .page-header p { font-size: 1.05rem; color: #888; font-weight: 300; max-width: 650px; margin: 0 auto; line-height: 1.8; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; color: var(--charcoal); margin-bottom: 1rem; }
+  .section-title em { font-style: italic; color: var(--terracotta); }
+  .section-subtitle { font-size: 0.92rem; color: #888; font-weight: 300; max-width: 650px; margin: 0 auto 3rem; line-height: 1.7; }
 
-  /* MAIN CONTENT */
-  .contact-section {
-    padding: 5rem 6%; max-width: 1200px; margin: 0 auto;
-    display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: start;
-  }
+  .brands-marquee-wrapper { overflow: hidden; mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent); margin-bottom: 1.5rem; }
+  .brands-marquee { display: flex; gap: 0; animation: marquee 50s linear infinite; width: max-content; }
+  .brands-marquee.reverse { animation: marquee-reverse 55s linear infinite; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes marquee-reverse { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 
-  /* LEFT - WHAT WE OFFER */
-  .benefits-side h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem; font-weight: 400; margin-bottom: 1.5rem; line-height: 1.3;
-  }
-  .benefits-side h2 em { font-style: italic; color: var(--terracotta); }
-  .benefits-side > p { color: #888; font-size: 0.92rem; line-height: 1.8; font-weight: 300; margin-bottom: 2.5rem; }
+  .brand-card { flex-shrink: 0; width: 200px; height: 90px; background: var(--warm-white); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 0.5rem; padding: 1rem 1.2rem; border: 1px solid rgba(139,158,124,0.1); transition: all 0.3s ease; cursor: pointer; }
+  .brand-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.06); border-color: var(--sage-light); }
+  .brand-inner { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.4rem; }
+  .brand-logo { height: 32px; max-width: 120px; object-fit: contain; filter: grayscale(100%) brightness(0.4); opacity: 0.7; transition: all 0.3s ease; }
+  .brand-card:hover .brand-logo { filter: grayscale(0%) brightness(1); opacity: 1; }
+  .brand-origin { font-size: 0.58rem; color: #bbb; letter-spacing: 0.1em; text-transform: uppercase; }
+  .brand-text-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: #555; letter-spacing: 0.02em; transition: color 0.3s; line-height: 1.2; }
+  .brand-card:hover .brand-text-logo { color: var(--charcoal); }
+  .brand-text-logo.uppercase { font-family: 'Outfit', sans-serif; text-transform: uppercase; font-size: 0.68rem; letter-spacing: 0.15em; font-weight: 600; }
+  .brand-text-logo.minimal { font-family: 'Outfit', sans-serif; font-weight: 300; font-size: 0.95rem; letter-spacing: 0.06em; }
+  .brand-text-logo.italic { font-style: italic; }
+  .brand-category-icon { font-size: 2rem; line-height: 1; margin-bottom: 0.2rem; }
 
-  .benefit-card {
-    display: flex; gap: 1rem; padding: 1.2rem; margin-bottom: 0.8rem;
-    background: var(--cream); border-radius: 12px;
-    transition: all 0.3s ease;
-  }
-  .benefit-card:hover { background: var(--warm-white); box-shadow: 0 8px 30px rgba(0,0,0,0.04); transform: translateY(-2px); }
-  .benefit-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 0.1rem; }
-  .benefit-card h4 { font-size: 0.88rem; font-weight: 500; margin-bottom: 0.2rem; }
-  .benefit-card p { font-size: 0.78rem; color: #999; line-height: 1.5; }
+  /* ABOUT */
+  .about { padding: 8rem 6%; max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+  .about-visual { position: relative; }
+  .about-image { width: 100%; aspect-ratio: 4/5; border-radius: 24px; background: linear-gradient(145deg, var(--cream) 0%, var(--sage-light) 100%); position: relative; overflow: hidden; }
+  .about-image::before { content: ''; position: absolute; inset: 2rem; border: 1px solid rgba(255,255,255,0.4); border-radius: 16px; }
+  .about-image-inner { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; }
+  .leaf-circle { width: 120px; height: 120px; border-radius: 50%; border: 2px solid rgba(58,74,46,0.2); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+  .about-image-text { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; color: var(--forest); opacity: 0.6; }
+  .about-accent { position: absolute; top: -20px; right: -20px; width: 140px; height: 140px; border-radius: 50%; background: var(--terracotta); opacity: 0.08; }
+  .about-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 300; line-height: 1.2; margin-bottom: 1.5rem; }
+  .about-text h2 em { font-style: italic; color: var(--terracotta); }
+  .about-text p { color: #666; line-height: 1.9; font-weight: 300; margin-bottom: 1.2rem; font-size: 0.95rem; }
+  .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem; }
+  .about-feature { padding: 1.2rem; background: var(--cream); border-radius: 12px; transition: all 0.3s ease; }
+  .about-feature:hover { background: var(--warm-white); box-shadow: 0 8px 30px rgba(0,0,0,0.04); transform: translateY(-2px); }
+  .about-feature-icon { font-size: 1.4rem; margin-bottom: 0.5rem; }
+  .about-feature h4 { font-size: 0.85rem; font-weight: 500; margin-bottom: 0.3rem; }
+  .about-feature p { font-size: 0.78rem !important; color: #999 !important; margin-bottom: 0 !important; line-height: 1.5 !important; }
 
-  /* CATEGORIES WE'RE LOOKING FOR */
-  .categories-wanted { margin-top: 2.5rem; }
-  .categories-wanted h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 500; margin-bottom: 1rem; color: var(--charcoal); }
-  .category-tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-  .category-tag {
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    padding: 0.5rem 1rem; background: var(--cream); border-radius: 50px;
-    font-size: 0.78rem; color: var(--sage-dark); font-weight: 400;
-    border: 1px solid rgba(139,158,124,0.15); transition: all 0.3s;
-  }
-  .category-tag:hover { background: var(--forest); color: var(--warm-white); border-color: var(--forest); }
+  /* CATEGORIES */
+  .categories { padding: 6rem 6%; background: var(--cream); }
+  .categories-header { text-align: center; margin-bottom: 4rem; }
+  .categories-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  .category-card { background: var(--warm-white); border-radius: 20px; padding: 2.5rem 2rem; text-align: center; transition: all 0.4s ease; cursor: pointer; border: 1px solid transparent; position: relative; overflow: hidden; }
+  .category-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(139,158,124,0.06) 100%); opacity: 0; transition: opacity 0.4s; }
+  .category-card:hover::before { opacity: 1; }
+  .category-card:hover { border-color: var(--sage-light); transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.06); }
+  .category-icon { font-size: 2.8rem; margin-bottom: 1.2rem; display: block; }
+  .category-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 500; margin-bottom: 0.5rem; }
+  .category-card p { font-size: 0.78rem; color: #999; line-height: 1.6; }
 
-  .direct-contact { margin-top: 2.5rem; padding: 2rem; background: var(--forest); border-radius: 16px; }
-  .direct-contact h4 { color: var(--warm-white); font-size: 0.85rem; font-weight: 500; margin-bottom: 1rem; letter-spacing: 0.05em; }
-  .contact-line { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.7rem; }
-  .contact-line .icon { font-size: 1rem; }
-  .contact-line a, .contact-line span { color: rgba(255,255,255,0.7); font-size: 0.88rem; font-weight: 300; text-decoration: none; transition: color 0.3s; }
-  .contact-line a:hover { color: var(--terracotta-light); }
+  /* VALUES */
+  .values { padding: 8rem 6%; max-width: 1200px; margin: 0 auto; text-align: center; }
+  .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-top: 4rem; }
+  .value-number { font-family: 'Cormorant Garamond', serif; font-size: 5rem; font-weight: 300; color: var(--cream-dark); line-height: 1; margin-bottom: 1rem; }
+  .value-item h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 500; margin-bottom: 0.8rem; }
+  .value-item p { font-size: 0.85rem; color: #888; line-height: 1.8; font-weight: 300; }
 
-  /* RIGHT - FORM */
-  .form-card {
-    background: var(--warm-white);
-    border: 1px solid rgba(139,158,124,0.12);
-    border-radius: 24px; padding: 3rem;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.04);
+  /* RETAILER SIGNUP */
+  .retailer-signup {
+    padding: 6rem 6%;
+    background: var(--forest);
+    position: relative;
+    overflow: hidden;
   }
-  .form-card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem; font-weight: 400; margin-bottom: 0.5rem; text-align: center;
+  .retailer-signup::before { content: ''; position: absolute; inset: 0; opacity: 0.03; background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 30px 30px; }
+  .retailer-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
   }
-  .form-card h3 em { font-style: italic; color: var(--terracotta); }
-  .form-card-subtitle { text-align: center; font-size: 0.8rem; color: #bbb; margin-bottom: 2rem; font-weight: 300; }
+  .retailer-text .section-label { color: var(--sage-light); }
+  .retailer-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 300; color: var(--warm-white); line-height: 1.2; margin-bottom: 1rem; }
+  .retailer-text h2 em { font-style: italic; color: var(--terracotta-light); }
+  .retailer-text p { color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.8; font-weight: 300; }
+  .retailer-benefits { list-style: none; margin-top: 1.5rem; }
+  .retailer-benefits li { color: rgba(255,255,255,0.75); font-size: 0.85rem; padding: 0.4rem 0; padding-left: 1.5rem; position: relative; font-weight: 300; }
+  .retailer-benefits li::before { content: '✓'; position: absolute; left: 0; color: var(--sage-light); font-weight: 600; }
 
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+  .retailer-form-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+  }
+  .retailer-form-card h3 { color: var(--warm-white); font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; margin-bottom: 1.5rem; text-align: center; }
   .form-group { margin-bottom: 1rem; }
-  .form-label { display: block; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage-dark); margin-bottom: 0.4rem; font-weight: 500; }
   .form-input {
-    width: 100%; padding: 0.9rem 1.2rem;
-    background: var(--cream);
-    border: 1.5px solid rgba(139,158,124,0.15);
-    border-radius: 10px; color: var(--charcoal);
-    font-family: 'Outfit', sans-serif; font-size: 0.88rem;
-    outline: none; transition: all 0.3s;
+    width: 100%; padding: 0.85rem 1.2rem;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px; color: var(--warm-white);
+    font-family: 'Outfit', sans-serif; font-size: 0.85rem;
+    outline: none; transition: border-color 0.3s;
   }
-  .form-input:focus { border-color: var(--sage); background: var(--warm-white); box-shadow: 0 0 0 3px rgba(139,158,124,0.1); }
-  .form-input::placeholder { color: #bbb; }
-  textarea.form-input { resize: vertical; min-height: 100px; }
-
+  .form-input:focus { border-color: var(--sage-light); }
+  .form-input::placeholder { color: rgba(255,255,255,0.35); }
+  .form-input.textarea { resize: vertical; min-height: 80px; }
   .form-select {
-    width: 100%; padding: 0.9rem 1.2rem;
-    background: var(--cream);
-    border: 1.5px solid rgba(139,158,124,0.15);
-    border-radius: 10px; color: var(--charcoal);
-    font-family: 'Outfit', sans-serif; font-size: 0.88rem;
-    outline: none; appearance: none; transition: all 0.3s;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236B7E5C' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat; background-position: right 1rem center;
+    width: 100%; padding: 0.85rem 1.2rem;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px; color: rgba(255,255,255,0.7);
+    font-family: 'Outfit', sans-serif; font-size: 0.85rem;
+    outline: none; appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff50' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
   }
-  .form-select:focus { border-color: var(--sage); background-color: var(--warm-white); box-shadow: 0 0 0 3px rgba(139,158,124,0.1); }
-
+  .form-select option { background: var(--charcoal); color: white; }
   .form-submit {
-    width: 100%; padding: 1.1rem;
+    width: 100%; padding: 1rem;
     background: var(--terracotta); color: white;
     border: none; border-radius: 50px;
-    font-family: 'Outfit', sans-serif; font-size: 0.88rem;
+    font-family: 'Outfit', sans-serif; font-size: 0.85rem;
     letter-spacing: 0.1em; text-transform: uppercase;
     cursor: pointer; transition: all 0.3s ease;
     margin-top: 0.5rem;
   }
-  .form-submit:hover { background: var(--terracotta-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(196,128,90,0.25); }
-  .form-note { text-align: center; margin-top: 1rem; font-size: 0.7rem; color: #bbb; line-height: 1.6; }
-  .form-note a { color: var(--sage-dark); }
+  .form-submit:hover { background: var(--terracotta-light); transform: translateY(-1px); }
+  .form-note { text-align: center; margin-top: 1rem; font-size: 0.7rem; color: rgba(255,255,255,0.3); }
+
+  /* CTA */
+  .cta { padding: 8rem 6%; text-align: center; background: var(--warm-white); }
+
+  /* NEW BRANDS WANTED */
+  .brands-wanted { padding: 6rem 6%; background: var(--cream); }
+  .brands-wanted-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
+  .brands-wanted-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3rem; margin-bottom: 3rem; }
+  .wanted-card { background: var(--warm-white); border-radius: 20px; padding: 2.5rem 2rem; text-align: center; transition: all 0.4s ease; border: 1px solid transparent; position: relative; overflow: hidden; }
+  .wanted-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(139,158,124,0.06) 100%); opacity: 0; transition: opacity 0.4s; }
+  .wanted-card:hover::before { opacity: 1; }
+  .wanted-card:hover { border-color: var(--sage-light); transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.06); }
+  .wanted-icon { font-size: 2.8rem; margin-bottom: 1.2rem; display: block; }
+  .wanted-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 500; margin-bottom: 0.5rem; }
+  .wanted-card p { font-size: 0.78rem; color: #999; line-height: 1.6; }
+  .brands-wanted-cta { margin-top: 1rem; }
+  @media (max-width: 1024px) { .brands-wanted-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 768px) { .brands-wanted-grid { grid-template-columns: 1fr; max-width: 400px; margin: 2rem auto; } }
+  .cta-inner { max-width: 800px; margin: 0 auto; background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%); border-radius: 32px; padding: 5rem 4rem; position: relative; overflow: hidden; }
+  .cta-inner::before { content: ''; position: absolute; top: -50%; right: -20%; width: 60%; height: 200%; background: radial-gradient(ellipse, rgba(139,158,124,0.1) 0%, transparent 70%); border-radius: 50%; }
+  .cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; margin-bottom: 1rem; position: relative; }
+  .cta h2 em { font-style: italic; color: var(--terracotta); }
+  .cta p { color: #888; font-weight: 300; max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.7; position: relative; }
 
   /* FOOTER */
-  footer { background: var(--charcoal); padding: 3rem 6% 2rem; color: rgba(255,255,255,0.6); margin-top: 4rem; }
-  .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-  .footer-brand-name { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--warm-white); }
+  footer { background: var(--charcoal); padding: 4rem 6% 2rem; color: rgba(255,255,255,0.6); }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .footer-brand-name { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--warm-white); margin-bottom: 1rem; }
   .footer-brand-name span { color: var(--terracotta-light); }
-  .footer-links { display: flex; gap: 1.5rem; }
-  .footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.8rem; font-weight: 300; transition: color 0.3s; }
-  .footer-links a:hover { color: var(--terracotta-light); }
-  .footer-copy { width: 100%; text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.06); font-size: 0.72rem; color: rgba(255,255,255,0.25); }
+  .footer-desc { font-size: 0.85rem; line-height: 1.7; font-weight: 300; max-width: 300px; }
+  .footer-badges { display: flex; gap: 0.6rem; margin-top: 1.2rem; flex-wrap: wrap; }
+  .footer-badge { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 0.4rem 0.7rem; font-size: 0.65rem; color: rgba(255,255,255,0.5); }
+  .footer-col h4 { color: var(--warm-white); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.2rem; }
+  .footer-col a { display: block; color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; font-weight: 300; margin-bottom: 0.7rem; transition: color 0.3s; }
+  .footer-col a:hover { color: var(--terracotta-light); }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: rgba(255,255,255,0.3); flex-wrap: wrap; gap: 1rem; }
 
   /* RESPONSIVE */
   @media (max-width: 1024px) {
-    .contact-section { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-content { grid-template-columns: 1fr; text-align: center; }
+    .hero-desc { margin: 0 auto 2.5rem; }
+    .hero-buttons { justify-content: center; }
+    .hero-visual { display: none; }
+    .about { grid-template-columns: 1fr; gap: 3rem; }
+    .about-visual { order: -1; max-width: 500px; margin: 0 auto; }
+    .categories-grid { grid-template-columns: repeat(2, 1fr); }
+    .retailer-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 768px) {
     .nav-links { display: none; }
-    .form-row { grid-template-columns: 1fr; }
-    .form-card { padding: 2rem 1.5rem; }
-    .footer-inner { flex-direction: column; text-align: center; }
-    .footer-links { flex-wrap: wrap; justify-content: center; }
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+    .about-features { grid-template-columns: 1fr; }
+    .values-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .categories-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+    .cta-inner { padding: 3rem 2rem; }
+    .footer-top { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; text-align: center; }
   }
+
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
 </style>
 </head>
 <body>
 
 <nav id="navbar">
-  <a href="index.html" class="nav-logo">Natu<span>essence</span></a>
+  <a href="#" class="nav-logo">Natu<span>essence</span></a>
   <ul class="nav-links">
-    <li><a href="index.html#marchi">Brands</a></li>
-    <li><a href="index.html#chi-siamo">About</a></li>
-    <li><a href="contatti.html">Retailers</a></li>
-    <li><a href="brand-partner.html" class="nav-cta">Brand Partners</a></li>
+    <li><a href="#chi-siamo">Chi Siamo</a></li>
+    <li><a href="#nuovi-marchi">Nuovi Marchi</a></li>
+    <li><a href="#perche-noi">Vantaggi</a></li>
+    <li><a href="contatti.html" class="nav-cta">Diventa Rivenditore</a></li>
   </ul>
 </nav>
 
-<header class="page-header">
-  <div class="page-header-shape"></div>
-  <div class="page-header-shape-2"></div>
-  <div class="page-header-content">
-    <div class="section-label">For Brands</div>
-    <h1>Bring Your Brand to the <em>European Market</em></h1>
-    <p>Natuessence Italy is an EU importer and distributor. We handle customs, regulatory compliance, warehousing, and distribution so you can focus on creating great products.</p>
-  </div>
-</header>
-
-<section class="contact-section">
-  <!-- LEFT -->
-  <div class="benefits-side">
-    <h2>What We Offer <em>Brand Partners</em></h2>
-    <p>We work with independent micro-brands from Latin America and the USA looking to enter or expand their presence in the European market. Here's what we handle for you:</p>
-
-    <div class="benefit-card"><div class="benefit-icon">🚢</div><div><h4>Direct Import & Customs</h4><p>Full customs clearance, import documentation, and freight coordination to our EU warehouse</p></div></div>
-    <div class="benefit-card"><div class="benefit-icon">📋</div><div><h4>EU Regulatory Compliance</h4><p>CPNP registration, Product Information File (PIF), safety assessment, and EU cosmetics regulation compliance</p></div></div>
-    <div class="benefit-card"><div class="benefit-icon">📦</div><div><h4>Warehousing & Fulfillment</h4><p>Italian warehouse with distribution capability across all 27 EU member states</p></div></div>
-    <div class="benefit-card"><div class="benefit-icon">🏪</div><div><h4>Retail Distribution</h4><p>Established network of health stores, pharmacies, organic shops, salons, and e-commerce across Europe</p></div></div>
-    <div class="benefit-card"><div class="benefit-icon">📊</div><div><h4>Marketing Support</h4><p>Localized marketing materials, product training, trade show representation, and merchandising</p></div></div>
-    <div class="benefit-card"><div class="benefit-icon">🔐</div><div><h4>Responsible Person (RP)</h4><p>We act as your EU Responsible Person — the legal requirement for placing cosmetics on the European market</p></div></div>
-
-    <div class="categories-wanted">
-      <h3>Categories We're Looking For</h3>
-      <div class="category-tag-list">
-        <span class="category-tag">🌿 Natural Cosmetics</span>
-        <span class="category-tag">🧴 Organic Skincare</span>
-        <span class="category-tag">💆 Hair Care</span>
-        <span class="category-tag">💄 Clean Makeup</span>
-        <span class="category-tag">💊 Vitamin Supplements</span>
-        <span class="category-tag">🧼 HBA Products</span>
-        <span class="category-tag">🌱 Aromatherapy</span>
-        <span class="category-tag">🍃 Wellness</span>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-organic-shape"></div>
+  <div class="hero-organic-shape-2"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge">Importatore e Distributore UE 🌎 🇪🇺</div>
+      <h1>Prodotti Naturali dall'<em>Essenza</em> Autentica</h1>
+      <p class="hero-desc">Importiamo e distribuiamo in tutta Europa i migliori micro-marchi indipendenti dall'America Latina e dagli Stati Uniti: cosmetici naturali, biologici, integratori vitaminici e prodotti HBA. Portiamo l'autenticità sugli scaffali del tuo negozio.</p>
+      <div class="hero-buttons">
+        <a href="contatti.html" class="btn-primary">Diventa Rivenditore <span>→</span></a>
       </div>
     </div>
-
-    <div class="direct-contact">
-      <h4>Direct Contact</h4>
-      <div class="contact-line"><span class="icon">✉️</span><a href="mailto:info@natuessence.it">info@natuessence.it</a></div>
-      <div class="contact-line"><span class="icon">📍</span><span>Milan, Italy</span></div>
-      <div class="contact-line"><span class="icon">🌐</span><a href="index.html">natuessence.it</a></div>
+    <div class="hero-visual">
+      <div class="hero-image-wrapper">
+        <div class="hero-plant-illustration">
+          <svg class="plant-svg" viewBox="0 0 200 300" fill="none"><path d="M100 280 C100 280 100 150 100 100 C80 60 40 40 30 20 C60 30 90 60 100 100" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none"/><path d="M100 200 C120 160 160 140 180 130 C150 150 120 170 100 200" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none"/><path d="M100 240 C75 210 40 200 20 190 C50 200 80 220 100 240" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none"/><path d="M100 160 C130 130 170 120 190 100 C160 120 130 140 100 160" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" fill="none"/><circle cx="100" cy="95" r="4" fill="rgba(255,255,255,0.3)"/><circle cx="180" cy="128" r="3" fill="rgba(255,255,255,0.2)"/><circle cx="20" cy="188" r="3" fill="rgba(255,255,255,0.2)"/></svg>
+        </div>
+      </div>
+      <div class="hero-floating-card card-1"><div class="card-stat">30+</div><div class="card-label">Marchi Indipendenti</div></div>
+      <div class="hero-floating-card card-2"><div class="card-stat">100%</div><div class="card-label">Naturale e Certificato</div></div>
     </div>
-  </div>
-
-  <!-- RIGHT - FORM -->
-  <div class="form-card">
-    <h3>Submit Your <em>Brand</em></h3>
-    <div class="form-card-subtitle">Tell us about your brand and products</div>
-
-    <form action="https://formsubmit.co/info@natuessence.it" method="POST">
-      <!-- FormSubmit config -->
-      <input type="hidden" name="_subject" value="New Brand Partner Application — Natuessence">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://natuessence.it/index.html">
-      <input type="hidden" name="_template" value="table">
-      <input type="text" name="_honey" style="display:none">
-
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">First Name</label>
-          <input type="text" name="first_name" class="form-input" placeholder="Your first name" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Last Name</label>
-          <input type="text" name="last_name" class="form-input" placeholder="Your last name" required>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="form-label">Brand Name</label>
-        <input type="text" name="brand_name" class="form-input" placeholder="Your brand name" required>
-      </div>
-
-      <div class="form-group">
-        <label class="form-label">Website</label>
-        <input type="url" name="website" class="form-input" placeholder="https://yourbrand.com" required>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Email</label>
-          <input type="email" name="email" class="form-input" placeholder="you@yourbrand.com" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Phone</label>
-          <input type="tel" name="phone" class="form-input" placeholder="+1 555 123 4567">
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Country</label>
-          <input type="text" name="country" class="form-input" placeholder="e.g. Brazil, USA, Mexico" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Product Category</label>
-          <select name="category" class="form-select" required>
-            <option value="" disabled selected>Select...</option>
-            <option value="Natural Cosmetics">Natural Cosmetics</option>
-            <option value="Organic Skincare">Organic Skincare</option>
-            <option value="Hair Care">Hair Care</option>
-            <option value="Clean Makeup">Clean Makeup</option>
-            <option value="Supplements & Vitamins">Supplements & Vitamins</option>
-            <option value="HBA Products">HBA Products</option>
-            <option value="Aromatherapy & Wellness">Aromatherapy & Wellness</option>
-            <option value="Multiple Categories">Multiple Categories</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="form-label">Number of SKUs</label>
-        <select name="sku_count" class="form-select">
-          <option value="" disabled selected>Select...</option>
-          <option value="1-10">1 – 10 SKUs</option>
-          <option value="11-30">11 – 30 SKUs</option>
-          <option value="31-50">31 – 50 SKUs</option>
-          <option value="50+">50+ SKUs</option>
-        </select>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Already Sold in the EU?</label>
-          <select name="eu_presence" class="form-select">
-            <option value="" disabled selected>Select...</option>
-            <option value="No - first time">No — first time entering EU</option>
-            <option value="Yes - limited">Yes — limited distribution</option>
-            <option value="Yes - established">Yes — established distribution</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Certifications</label>
-          <input type="text" name="certifications" class="form-input" placeholder="e.g. Ecocert, USDA Organic, Vegan">
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="form-label">Tell Us About Your Brand</label>
-        <textarea name="brand_story" class="form-input" placeholder="What makes your brand unique? What are your hero products? What are your goals for the European market?"></textarea>
-      </div>
-
-      <button type="submit" class="form-submit">Submit Application <span>→</span></button>
-      <div class="form-note">We review all applications within 5 business days. If your brand is a good fit, we'll schedule a call to discuss next steps.<br>Your data is handled in accordance with our <a href="#">privacy policy</a>.</div>
-    </form>
   </div>
 </section>
 
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand-name">Natu<span>essence</span></div>
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="index.html#marchi">Brands</a>
-      <a href="contatti.html">Retailers</a>
-      <a href="mailto:info@natuessence.it">info@natuessence.it</a>
+
+
+
+
+<!-- CHI SIAMO -->
+<section class="about" id="chi-siamo">
+  <div class="about-visual">
+    <div class="about-image"><div class="about-image-inner"><div class="leaf-circle">🌿</div><div class="about-image-text">Radicati nella Natura</div></div></div>
+    <div class="about-accent"></div>
+  </div>
+  <div class="about-text">
+    <div class="section-label">Chi Siamo</div>
+    <h2>Il Vostro <em>Importatore</em> e Distributore in Europa</h2>
+    <p>Natuessence Italy S.R.L. è nata con una missione chiara: importare e rendere accessibili nel mercato europeo i migliori prodotti naturali, biologici e integratori da piccoli marchi indipendenti dell'America Latina e degli Stati Uniti. Selezioniamo con cura brand che condividono il nostro impegno per la qualità autentica.</p>
+    <p>Dalla cura dei capelli a base di hennè agli integratori vitaminici, dai cosmetici biologici ai prodotti HBA, gestiamo l'intera filiera di importazione e distribuzione — sdoganamento, conformità normativa UE, logistica e partnership commerciali — così che i nostri brand partner possano concentrarsi su ciò che fanno meglio.</p>
+    <div class="about-features">
+      <div class="about-feature"><div class="about-feature-icon">🚢</div><h4>Importazione Diretta</h4><p>Sdoganamento, documentazione e importazione dall'America Latina e dagli USA</p></div>
+      <div class="about-feature"><div class="about-feature-icon">📋</div><h4>Conformità Normativa UE</h4><p>CPNP, regolamenti UE cosmetici, integratori e supporto documentale</p></div>
+      <div class="about-feature"><div class="about-feature-icon">📦</div><h4>Distribuzione Europea</h4><p>Magazzino, fulfillment e logistica in tutta Europa</p></div>
+      <div class="about-feature"><div class="about-feature-icon">🤝</div><h4>Partnership Commerciali</h4><p>Rete consolidata di rivenditori, erboristerie, farmacie e negozi bio</p></div>
     </div>
   </div>
-  <div class="footer-copy">© 2026 Natuessence Italy S.R.L. All rights reserved. — Milan, Italy</div>
-</footer>
+</section>
 
-<script>
-  window.addEventListener('scroll', () => {
-    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
-  });
-</script>
+<!-- PERCHÉ NOI -->
+<section class="values" id="perche-noi">
+  <div class="section-label">Perché Scegliere Noi</div>
+  <div class="section-title">I Nostri <em>Vantaggi</em> per i Rivenditori</div>
+  <div class="values-grid">
+    <div class="value-item"><div class="value-number">01</div><h3>Solo Micro-Marchi Selezionati</h3><p>Nessun marchio di massa. Ogni prodotto proviene da produttori indipendenti latinoamericani e americani che lavorano in piccoli lotti con attenzione ossessiva alla qualità e agli ingredienti naturali.</p></div>
+    <div class="value-item"><div class="value-number">02</div><h3>Importazione e Conformità UE</h3><p>Gestiamo l'intero processo di importazione: sdoganamento, registrazione CPNP, conformità regolamenti UE su cosmetici e integratori. Nessun problema normativo per i nostri partner.</p></div>
+    <div class="value-item"><div class="value-number">03</div><h3>Supporto Commerciale</h3><p>Materiale marketing, formazione prodotto, supporto visual merchandising e analisi delle tendenze del mercato beauty naturale e integratori.</p></div>
+  </div>
+</section>
 
-</body>
-</html>
+
+
+<!-- CERCHIAMO NUOVI MARCHI -->
+<section class="brands-wanted" id="nuovi-marchi">
+  <div class="brands-wanted-inner">
+    <div class="section-label">Espandiamo il Nostro Portfolio</div>
+    <div class="section-title">Cerchiamo <em>Nuovi Marchi</em> da Importare</div>
+    <p class="section-subtitle">Siamo costantemente alla ricerca di micro-marchi indipendenti dall'America Latina e dagli Stati Uniti che vogliono entrare nel mercato europeo. Se il tuo brand rientra in una di queste categorie, vogliamo conoscerti.</p>
+
+    <div class="brands-wanted-grid">
+      <div class="wanted-card">
+        <span class="wanted-icon">🌿</span>
+        <h3>Cosmetici Naturali & Biologici</h3>
+        <p>Skincare, haircare e trucco formulati con ingredienti naturali, biologici e certificati. Clean beauty senza compromessi.</p>
+      </div>
+      <div class="wanted-card">
+        <span class="wanted-icon">💊</span>
+        <h3>Integratori & Vitamine</h3>
+        <p>Integratori alimentari, vitamine, minerali e superfood naturali. Prodotti con formulazioni innovative e ingredienti di qualità.</p>
+      </div>
+      <div class="wanted-card">
+        <span class="wanted-icon">🧴</span>
+        <h3>HBA — Health, Beauty & Accessories</h3>
+        <p>Prodotti per l'igiene personale, cura del corpo, saponi naturali, deodoranti bio e accessori beauty ecosostenibili.</p>
+      </div>
+      <div class="wanted-card">
+        <span class="wanted-icon">🌱</span>
+        <h3>Benessere & Aromaterapia</h3>
+        <p>Oli essenziali, prodotti per aromaterapia, rimedi naturali e prodotti wellness per corpo e mente.</p>
+      </div>
+    </div>
+
+    <p class="section-subtitle">Offriamo ai nuovi brand partner: importazione diretta, registrazione CPNP, conformità normativa UE, magazzino e distribuzione in tutta Europa. Il tuo unico pensiero sarà creare prodotti straordinari.</p>
+    <div class="brands-wanted-cta">
+      <a href="brand-partner.html" class="btn-primary">Proponi il Tuo Brand <span>→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BRAND -->
+<section class="cta">
+  <div class="cta-inner">
+    <div class="section-label">Per i Marchi</div>
+    <h2>Sei un Micro-Brand <em>Naturale?</em></h2>
+    <p>Che tu sia in America Latina o negli Stati Uniti — se produci cosmetici naturali, integratori, prodotti HBA o benessere in piccoli lotti con passione e integrità, ci piacerebbe importare e distribuire i tuoi prodotti in Europa.</p>
+    <a href="brand-partner.html" class="btn-primary">Candidati Come Brand <span>→</span></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">Natu<span>essence</span></div>
+      <p class="footer-desc">Importatore e distributore europeo di cosmetici naturali, biologici, integratori e prodotti HBA da micro-marchi indipendenti dall'America Latina e dagli Stati Uniti.</p>
+      <div class="footer-badges">
+        <span class="footer-badge">🇪🇺 Importatore UE</span>
+        <span class="footer-badge">🌎 America Latina & USA</span>
+        <span class="footer-badge">🌿 CPNP Registrato</span>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Categorie</h4><a href="#chi-siamo">Chi Siamo</a><a href="#">Cosmetici Naturali</a><a href="#">Integratori & Vitamine</a><a href="#">HBA</a><a href="#">Benessere</a></div>
+    <div class="footer-col"><h4>Azienda</h4><a href="#chi-siamo">Chi Siamo</a><a href="#nuovi-marchi">Nuovi Marchi</a><a href="contatti.html">Diventa Rivenditore</a><a href="brand-partner.html">Diventa Brand Partner</a><a href="#">Conformità Normativa</a></div>
+    <div class="footer-col"><h4>Contatti</h4><a href="#">Chi Siamo</a><a href="#">Via Libero Temolo, 5, Milano, Italia</a></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Natuessence Italy S.R.L. Tutti
